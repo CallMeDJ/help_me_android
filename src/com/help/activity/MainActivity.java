@@ -26,6 +26,7 @@ import android.widget.Toast;
 import com.example.help.R;
 import com.help.activity.achievement.AchievementActivity;
 import com.help.activity.edit.EditActivity;
+import com.help.activity.im.MessageActivity;
 import com.help.activity.index.IndexActivity;
 import com.help.activity.mine.MineActivity;
 import com.help.activity.more.MoreActivity;
@@ -184,7 +185,7 @@ public class MainActivity extends ActivityGroup implements OnClickListener {
 			BackKeyCount = 0;
 			break;
 		case R.id.rbMine:
-			setContainerView("mine", TaskActivity.class, null, false);
+			setContainerView("mine", MessageActivity.class, null, false);
 			rbMine.setChecked(true);
 			BackKeyCount = 0;
 			break;
@@ -211,7 +212,7 @@ public class MainActivity extends ActivityGroup implements OnClickListener {
 			rbEdit.setChecked(true);
 			break;
 		case R.id.rbMine:
-			setContainerView("mine", TaskActivity.class, b, needRestart);
+			setContainerView("mine", MessageActivity.class, b, needRestart);
 			rbMine.setChecked(true);
 			break;
 		case R.id.rbMore:

@@ -25,14 +25,14 @@ public class expLiner extends ProgressBar{
 
 	
 	public expLiner(Context context, AttributeSet attrs) {
-		super(context);
+		super(context,attrs);
 		// TODO Auto-generated constructor stub
 		initPaint();
 		Log.d("expLiner:2", "expLiner:2");
 	}
 	
 	public expLiner(Context context, AttributeSet attrs, int defStyle) {
-		super(context);
+		super(context, attrs,defStyle);
 		// TODO Auto-generated constructor stub
 		initPaint();
 		Log.d("expLiner:3", "expLiner:3");
@@ -44,6 +44,7 @@ public class expLiner extends ProgressBar{
 	    public synchronized void setProgress(int progress) {
 		 setTextProgress(progress);
 		 super.setProgress(progress);
+		 super.setSecondaryProgress((progress/this.getMax())*100);
 		 Log.d("progress_set", ""+progress);
 	    }  
 	 @Override  
@@ -60,6 +61,7 @@ public class expLiner extends ProgressBar{
 	private void initPaint(){
 		this.mPaint = new Paint();
 		mPaint.setAntiAlias(true);
+		mPaint.setTextSize(25f);
 		this.mPaint.setColor(Color.WHITE);
 		Log.d("init_painting_success", "");
 		setWillNotDraw(false);

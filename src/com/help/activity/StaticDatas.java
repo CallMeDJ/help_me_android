@@ -5,6 +5,12 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+
+import com.example.help.R;
+import com.help.activity.im.Chat;
+
 public class StaticDatas {
 	
 	//全球排名
@@ -12,6 +18,7 @@ public static List<GlobalRankModel> globalRankList = new ArrayList<GlobalRankMod
 public static Map<String,String> achievementData = new HashMap<String, String>();	
 public static String currentPosition = "";
     public static List<String> positionList = new ArrayList<String>();
+    public static List<Chat> conversationList = new ArrayList<Chat>();
 
 
 

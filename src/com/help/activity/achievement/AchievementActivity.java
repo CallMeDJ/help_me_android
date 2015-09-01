@@ -21,7 +21,7 @@ public class AchievementActivity extends BaseActivity{
 	private TextView achievement_position_value;
 	private TextView achievement_global_rank_value;
 	private TextView achievement_current_level;
-	private ProgressBar achievement_expLiner;
+	private expLiner achievement_expLiner;
 	private TextView achievement_next_level;
 	private TextView achievement_completed_mission;
 	private TextView achievement_agree_count;
@@ -71,7 +71,7 @@ public class AchievementActivity extends BaseActivity{
 		achievement_position_value = (TextView) findViewById(R.id.achievement_position_value);
 		achievement_global_rank_value = (TextView) findViewById(R.id.achievement_global_rank_value);
 		achievement_current_level = (TextView) findViewById(R.id.achievement_position_value);
-		achievement_expLiner = (ProgressBar) findViewById(R.id.achievement_expLiner);
+		achievement_expLiner = (expLiner) findViewById(R.id.achievement_expLiner);
 		achievement_next_level = (TextView) findViewById(R.id.achievement_next_level);
 		achievement_completed_mission = (TextView) findViewById(R.id.achievement_completed_mission);
 		achievement_agree_count = (TextView) findViewById(R.id.achievement_agree_count);
