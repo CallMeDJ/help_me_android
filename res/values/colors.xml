@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="translucent_background">#88000000</color>
+    <color name="bottom_bar_gray">#f8f8f9</color>
+    <color name="progress_gray">#CCCCCC</color>
+    <color name="main_line_gray">#DCDCDC</color>
+    <color name="main_text_black">#4f5257</color>
+    <color name="main_red1">#fd5224</color>
+    <color name="main_orange">#FF9900</color>
+    <color name="main_orange_xinshoujiang">#F2A708</color>
+    <color name="main_text_gray">#ABABAB</color>
+    <color name="main_blue">#30C4FF</color>
+    <color name="main_gray">#6B6B6B</color>
+    <color name="main_text_blue">#128DD3</color>
+    <color name="main_background">#F8F8F8</color>
+    <color name="front_blue" type="color">#51AEB8</color>
+    <color name="bg_blue" type="color">#2270B2</color>
+    <color name="black" type="color">#000000</color>
+    <color name="white" type="color">#FFFFFFFF</color>
+    <color name="dark">#FF222222</color>
+    <color name="blue" type="color">#FF2270B2</color>
+    <color name="light">#00000000</color>
+    <color name="green" type="color">#03bf70</color>
+    <color name="allbg" type="color">#f1f1f1</color>
+    <color name="alltext" type="color">#666666</color>
+    <color name="line" type="color">#e1e1e1</color>
+    <color name="orange" type="color">#e19904</color>
+    <color name="red" type="color">#ff0000</color>
+    <color name="zhifubg" type="color">#E7E7E7</color>
+    <color name="jiangred" type="color">#DD5555</color>
+    <color name="qianblue" type="color">#6ED9FF</color>
+    <color name="shenblue" type="color">#4DB7DA</color>
+    <color name="result_view">#b0000000</color>
+    <color name="viewfinder_mask">#60000000</color>
+    <color name="possible_result_points">#c0ffff00</color>
+    <color name="gray">#dddddd</color>
+
+</resources>

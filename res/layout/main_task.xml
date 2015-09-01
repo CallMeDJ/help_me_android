@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/main_background"
+    android:orientation="vertical" >
+
+    <include
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        layout="@layout/titlebar" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="15dp" >
+
+        <RadioGroup
+            android:id="@+id/tingchezhong_rg"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/allbg"
+            android:orientation="horizontal" >
+
+            <RadioButton
+                android:id="@+id/tingchezhong_rb1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/action_bar_tab_bg"
+                android:button="@null"
+                android:checked="true"
+                android:gravity="center"
+                android:padding="5dp"
+                android:text="我发布的"
+                android:textColor="@color/radiobtn_text_color"
+                android:textSize="14sp" />
+
+            <RadioButton
+                android:id="@+id/tingchezhong_rb2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/action_bar_tab_bg2"
+                android:button="@null"
+                android:gravity="center"
+                android:padding="5dp"
+                android:text="我接受的"
+                android:textColor="@color/radiobtn_text_color"
+                android:textSize="14sp" />
+        </RadioGroup>
+    </LinearLayout>
+
+    <com.help.listview.XListView
+        android:id="@+id/tingchezhong_listview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+    </com.help.listview.XListView>
+
+</LinearLayout>

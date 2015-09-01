@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/allbg"
+    android:orientation="vertical" >
+
+    <include
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_96px"
+        layout="@layout/titlebar" />
+
+    <TextView
+        android:id="@+id/jieshou_tv1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:padding="10dp"
+        android:text="50:05"
+        android:textColor="@color/red"
+        android:textSize="@dimen/sp_48px" />
+
+    <LinearLayout
+        android:id="@+id/showweizhi"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:orientation="horizontal" >
+
+        <ImageView
+            android:id="@+id/mine_meiyong_imageview00"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingBottom="10dp"
+            android:src="@drawable/add1" />
+
+        <TextView
+            android:id="@+id/jieshou_tv2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingBottom="10dp"
+            android:paddingLeft="5dp"
+            android:text="平安大厦"
+            android:textColor="@color/alltext"
+            android:textSize="@dimen/sp_28px"
+            android:visibility="visible" />
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.1dp"
+        android:layout_marginLeft="80dp"
+        android:layout_marginRight="80dp"
+        android:layout_marginTop="5dp"
+        android:background="@color/main_line_gray" />
+
+    <LinearLayout
+        android:id="@+id/mine_layout_zhanghu"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="vertical" >
+
+        <ImageView
+            android:id="@+id/mine_meiyong_imageview0"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:padding="10dp"
+            android:src="@drawable/mine_head" />
+
+        <LinearLayout
+            android:id="@+id/mine_meiyong_layout0"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/jieshou_tv3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:padding="5dp"
+                android:text="小猪 | 男"
+                android:textColor="@color/alltext"
+                android:textSize="@dimen/sp_24px" />
+
+            <TextView
+                android:id="@+id/jieshou_tv4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                android:text="18576767676"
+                android:textColor="@color/red"
+                android:textSize="@dimen/sp_32px" />
+        </LinearLayout>
+    </LinearLayout>
+
+      <View
+        android:layout_width="match_parent"
+        android:layout_height="0.1dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="10dp"
+        android:background="@color/main_line_gray" />
+    
+    
+    <LinearLayout
+        android:id="@+id/dialog_layout2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal" >
+
+        <Button
+            android:id="@+id/jieshou_cancel"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="10dp"
+            android:layout_weight="1"
+            android:background="@color/jiangred"
+            android:gravity="center"
+            android:text="取消任务"
+            android:textColor="@color/white"
+            android:textSize="@dimen/sp_32px" />
+
+        <Button
+            android:id="@+id/jieshou_submit"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="10dp"
+            android:layout_weight="1"
+            android:background="@color/main_blue"
+            android:gravity="center"
+            android:text="确认完成"
+            android:textColor="@color/white"
+            android:textSize="@dimen/sp_32px" />
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:id="@+id/rel1"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.5"
+        android:background="#000000" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20sp"
+            android:text="钱包"
+            android:textColor="#FFFFFF"
+            android:textSize="50px" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="2" >
+
+        <TextView
+            android:id="@+id/sum"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:padding="15dp"
+            android:text="333.33"
+            android:textColor="#8B0000"
+            android:textSize="40px" />
+
+        <TextView
+            android:id="@+id/num"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/sum"
+            android:layout_centerHorizontal="true"
+            android:padding="15dp"
+            android:text="总收入"
+            android:textSize="40px" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="2.5" >
+
+        <TextView
+            android:id="@+id/obtain"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="50dp"
+            android:paddingTop="15dp"
+            android:text="获得佣金"
+            android:textSize="30px" />
+
+        <TextView
+            android:id="@+id/obtain_num"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/obtain"
+            android:paddingLeft="50dp"
+            android:paddingTop="15dp"
+            android:text="333.33"
+            android:textColor="#8B0000"
+            android:textSize="30px" />
+
+        <TextView
+            android:id="@+id/expand"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:paddingRight="50dp"
+            android:paddingTop="15dp"
+            android:text="支出佣金"
+            android:textSize="30px" />
+
+        <TextView
+            android:id="@+id/expend_num"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_below="@+id/expand"
+            android:paddingRight="50dp"
+            android:paddingTop="15dp"
+            android:text="111.11"
+            android:textColor="#808000"
+            android:textSize="30px" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1" >
+
+        <TextView
+            android:id="@+id/deal_history"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:paddingRight="50dp"
+            android:paddingTop="15dp"
+            android:text="交易历史"
+            android:textSize="30px" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="4" >
+
+        <TextView
+            android:id="@+id/pay_bao"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="50dp"
+            android:paddingTop="30dp"
+            android:text="支付宝:1599999999"
+            android:textSize="30px" />
+
+        <TextView
+            android:id="@+id/pay_way"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/pay_bao"
+            android:paddingLeft="50dp"
+            android:paddingTop="30dp"
+            android:text="添加付款方式"
+            android:textSize="30px" />
+    </RelativeLayout>
+
+</LinearLayout>

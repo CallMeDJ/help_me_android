@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:orientation="vertical" >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="10dp"
+            android:background="@color/white" >
+
+            <TextView
+                android:id="@+id/index_item_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:padding="5dp"
+                android:text="宋培鑫"
+                android:textColor="@color/main_text_black"
+                android:textSize="14sp"
+                android:visibility="gone" >
+            </TextView>
+
+            <TextView
+                android:id="@+id/index_ser"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_margin="5dp"
+                android:text="2015-08-10"
+                android:textColor="@color/main_red1"
+                android:textSize="10sp" >
+            </TextView>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="10dp"
+            android:background="@color/white" >
+
+            <TextView
+                android:id="@+id/index_item_content"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:layout_margin="5dp"
+                android:paddingBottom="10dp"
+                android:paddingLeft="5dp"
+                android:text="帮小猪去去快递！快递！快递！快递！快递！快递！快递！快递！快递！快递！快递！快递！"
+                android:textColor="@color/main_text_black"
+                android:textSize="12sp"
+                android:visibility="visible" >
+            </TextView>
+
+            <TextView
+                android:id="@+id/index_sermeiyong"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_margin="5dp"
+                android:text="2015-08-10"
+                android:textColor="@color/main_text_black"
+                android:textSize="12sp"
+                android:visibility="gone" >
+            </TextView>
+        </RelativeLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.1dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:background="@color/main_line_gray" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="10dp"
+            android:background="@color/white"
+            android:padding="5dp" >
+
+            <TextView
+                android:id="@+id/index_item_dizhi"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:layout_margin="5dp"
+                android:text="平安大厦"
+                android:textColor="@color/main_text_gray"
+                android:textSize="10sp"
+                android:visibility="visible" >
+            </TextView>
+
+            <TextView
+                android:id="@+id/index_item_juli"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_margin="5dp"
+                android:layout_toRightOf="@+id/index_item_dizhi"
+                android:text="200m"
+                android:textColor="@color/main_text_gray"
+                android:textSize="10sp"
+                android:visibility="visible" >
+            </TextView>
+
+            <TextView
+                android:id="@+id/index_item_qian"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_margin="5dp"
+                android:text="￥2.00"
+                android:textColor="@color/green"
+                android:textSize="10sp" >
+            </TextView>
+        </RelativeLayout>
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="10dp"
+        android:background="@color/allbg" />
+
+</LinearLayout>
