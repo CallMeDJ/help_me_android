@@ -1,4 +1,4 @@
-package com.help.activity;
+﻿package com.help.activity;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
@@ -27,7 +27,7 @@ public class GuideActivity extends BaseActivity implements OnClickListener {
 
 	// 引导图片
 	private static final int[] resource = new int[] { R.drawable.welcome_1,
-			R.drawable.welcome_2, R.drawable.mi };
+			R.drawable.welcome_2, R.drawable.welcome_3 };
 
 	// 引导页的标题
 	private static final int[] titleRes = new int[] { R.string.sanbiaotouzi,
