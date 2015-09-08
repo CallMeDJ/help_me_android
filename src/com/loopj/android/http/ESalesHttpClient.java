@@ -16,7 +16,7 @@ public class ESalesHttpClient {
 	public static final String SHOP_COOKIE = "shop_cookie";
 
 	static String currentCookie = HOST_COOKIE;
-
+	
 	// 网络请求post
 	public static void requestPost(Context context, final String apiName,
 			RequestParams params, AsyncHttpResponseHandler responseHandler) {
