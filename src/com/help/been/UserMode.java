@@ -158,7 +158,6 @@ public class UserMode {
 		Tool.writeData(ctx, "user", "sjsfsz", this.getSjsfsz());
 		Tool.writeData(ctx, "user", "sfzsfrz", this.getSfzsfrz());
 		Tool.writeData(ctx, "user", "znxwdts", this.getZnxwdts());
-		
 	}
  
 }
