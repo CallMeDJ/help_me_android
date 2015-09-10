@@ -7,15 +7,24 @@ import android.graphics.Bitmap;
  */
 public class Chat {
     public String chat_id;
-    public String user_name;
+    public boolean is_received;
     public String content;
-    public String chat_date;
-    public String is_deleted;
+    
+    public boolean isIs_received() {
+		return is_received;
+	}
+
+	public void setIs_received(boolean is_received) {
+		this.is_received = is_received;
+	}
+
+	public String chat_date;
+    public boolean is_deleted;
 
 
-    public Chat(String chat_id, String user_name, String content, String chat_date, String is_deleted) {
+    public Chat(String chat_id, boolean is_received, String content, String chat_date, boolean is_deleted) {
         this.chat_id = chat_id;
-        this.user_name = user_name;
+        this.is_received = is_received;
         this.content = content;
         this.chat_date = chat_date;
         this.is_deleted = is_deleted;
@@ -29,13 +38,6 @@ public class Chat {
         this.chat_id = chat_id;
     }
 
-    public String getUser_name() {
-        return user_name;
-    }
-
-    public void setUser_name(String user_name) {
-        this.user_name = user_name;
-    }
 
     public String getContent() {
         return content;
@@ -53,11 +55,13 @@ public class Chat {
         this.chat_date = chat_date;
     }
 
-    public String getIs_deleted() {
-        return is_deleted;
-    }
+	public boolean isIs_deleted() {
+		return is_deleted;
+	}
 
-    public void setIs_deleted(String is_deleted) {
-        this.is_deleted = is_deleted;
-    }
+	public void setIs_deleted(boolean is_deleted) {
+		this.is_deleted = is_deleted;
+	}
+
+
 }

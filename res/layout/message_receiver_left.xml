@@ -8,7 +8,7 @@
     <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
               android:text="14:22"
               android:layout_alignParentTop="true"
-              android:id="@+id/message_time_right"
+              android:id="@+id/message_time_left"
               android:layout_marginBottom="5dp"
               android:layout_centerHorizontal="true"
               android:background="@color/deep_gray"
@@ -18,20 +18,23 @@
     <LinearLayout android:orientation="horizontal"
                   android:layout_width="wrap_content"
                   android:layout_height="wrap_content"
-                  android:layout_below="@id/message_time_right"
+                  android:layout_below="@id/message_time_left"
                   android:layout_alignParentLeft="true">
         <ImageView
-                android:id="@+id/conversation_user_icon"
+                android:id="@+id/message_user_icon_left"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:src="@drawable/icon_wenzhuanbao"
-                android:layout_marginRight="5dp"/>
+                android:layout_marginRight="5dp"
+                android:paddingLeft="5dp"/>
 
 
         <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
-                  android:text="你好啊"
+                  android:text="你好啊你好啊你好啊你好啊你好啊你好啊你好啊你好啊你好啊"
                   android:background="@drawable/rc_ic_bubble_left"
+                  android:id="@+id/message_content_left"
                   android:gravity="left"
+                  android:maxWidth="200dp"
 
                 />
 

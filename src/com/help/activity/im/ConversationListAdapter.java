@@ -1,7 +1,6 @@
 package com.help.activity.im;
 
 import java.util.List;
-
 import android.content.Context;
 import android.content.Intent;
 import android.view.LayoutInflater;
@@ -10,8 +9,8 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
-
 import com.example.help.R;
+import com.help.activity.StaticDatas;
 
 public class ConversationListAdapter extends BaseAdapter{
 	Context context;
@@ -69,7 +68,7 @@ public View getView(final int position, View view, ViewGroup parentView) {
 	public void performClick(int position){
 		Conversation conversation = getItem(position);
 		Intent i = new Intent(context,ChatActivity.class);
-		i.putExtra("user_name", conversation.user_name);
+		StaticDatas.conversation = conversation;
 		context.startActivity(i);
 
 	}

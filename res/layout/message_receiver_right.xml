@@ -22,17 +22,20 @@
                   android:layout_alignParentRight="true">
 
         <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
-                  android:text="你好啊"
+                  android:text="你好啊你好啊你好啊你好啊你好啊你好啊你好啊你好啊你好啊你好啊你好啊你好啊你好啊"
                   android:background="@drawable/rc_ic_bubble_right"
+                  android:maxWidth="200dp"
                   android:gravity="left"
+                  android:id="@+id/message_content_right"
 
                 />
         <ImageView
-                android:id="@+id/conversation_user_icon"
+                android:id="@+id/message_user_icon_right"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:src="@drawable/icon_wenzhuanbao"
-                android:layout_marginLeft="5dp"/>
+                android:layout_marginLeft="5dp"
+                android:paddingRight="5dp"/>
 
 
     </LinearLayout>
