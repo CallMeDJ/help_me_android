@@ -1,5 +1,8 @@
 package com.help.activity;
+import com.help.activity.im.ChatService;
+
 import android.app.Application;
+import android.content.Intent;
 
 public class MyApplication extends Application {
 	
@@ -20,6 +23,7 @@ public class MyApplication extends Application {
 	public void onCreate() {
 		super.onCreate();
 		StaticDatas.context = this;
+		Intent ChatServiceIntent = new Intent(this,ChatService.class);
+		startService(ChatServiceIntent);
 	}
-
 }

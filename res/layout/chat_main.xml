@@ -13,11 +13,11 @@
 
 
 
-<com.help.listview.XListView 
+<ListView 
 	    android:layout_width="match_parent"
 	    android:layout_height="wrap_content"
 	    android:id="@+id/chat_list"
-        android:layout_below="@+id/chat_title_bar" ></com.help.listview.XListView>
+        android:layout_below="@+id/chat_title_bar" ></ListView>
 
 
     <LinearLayout android:layout_width="match_parent"

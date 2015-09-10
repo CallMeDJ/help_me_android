@@ -11,5 +11,7 @@ public class CommonAPI {
 	
 	//登录接口 http://1.pinganhelpersae.sinaapp.com/index.php?m=User&a=login
 	public static String API_LOGIN = HOME_URL+"m=User&a=login";
+	
+	public static String GET_NEW_CHAT = Host + "getNewChat.php?";
 
 }

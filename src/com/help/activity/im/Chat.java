@@ -9,6 +9,10 @@ public class Chat {
     public String chat_id;
     public boolean is_received;
     public String content;
+	public String chat_date;
+    public boolean is_deleted = false;
+
+    
     
     public boolean isIs_received() {
 		return is_received;
@@ -18,8 +22,6 @@ public class Chat {
 		this.is_received = is_received;
 	}
 
-	public String chat_date;
-    public boolean is_deleted;
 
 
     public Chat(String chat_id, boolean is_received, String content, String chat_date, boolean is_deleted) {
@@ -30,7 +32,12 @@ public class Chat {
         this.is_deleted = is_deleted;
     }
 
-    public String getChat_id() {
+    public Chat() {
+		// TODO Auto-generated constructor stub
+
+	}
+
+	public String getChat_id() {
         return chat_id;
     }
 
