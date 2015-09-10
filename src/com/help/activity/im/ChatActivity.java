@@ -53,17 +53,20 @@ public class ChatActivity extends BaseActivity{
 	
 	
 	private class ChatAdapter extends BaseAdapter{
-
+		private Integer size = null;
 		@Override
 		public int getCount() {
 			// TODO Auto-generated method stub
-			return chatList.size();
+			if(size == null){
+				size = chatList.size();
+			}
+			return size;
 		}
 
 		@Override
 		public Chat getItem(int position) {
 			// TODO Auto-generated method stub
-			return chatList.get(position);
+			return chatList.get(size - position);
 		}
 
 		@Override
