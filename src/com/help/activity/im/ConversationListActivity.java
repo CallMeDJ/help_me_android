@@ -22,6 +22,7 @@ public class ConversationListActivity extends BaseActivity implements IXListView
 	private XListView conversation_list;
 	public List<Conversation> conversationList;
 	private ConversationBoradcastReceiver conversationBoradcastReceiver;
+	private ConversationListAdapter conversationListAdapter;
 	@Override
 	protected int layoutId() {
 		// TODO Auto-generated method stub
@@ -51,8 +52,8 @@ public class ConversationListActivity extends BaseActivity implements IXListView
 		conversationList = StaticDatas.conversationList;
 		conversation_list = (XListView)findViewById(R.id.conversation_list);
 		conversation_list.setPullLoadEnable(false);
-		ConversationListAdapter adapter = new ConversationListAdapter(this,conversationList);
-		conversation_list.setAdapter(adapter);
+	    conversationListAdapter = new ConversationListAdapter(this,conversationList);
+		conversation_list.setAdapter(conversationListAdapter);
 		conversation_list.deferNotifyDataSetChanged();
 		
 		
@@ -65,6 +66,11 @@ public class ConversationListActivity extends BaseActivity implements IXListView
 	
 	public void handleNewChat(){
 		List<Chat> newChatList = ChatManager.chatList;
+		for(Chat chat : newChatList){
+			
+		}
+		
+		
 	}
 	@Override
 	public void onRefresh() {

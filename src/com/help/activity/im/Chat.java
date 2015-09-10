@@ -8,6 +8,7 @@ import android.graphics.Bitmap;
 public class Chat {
     public String chat_id;
     public boolean is_received;
+    public String user_id;
     public String content;
 	public String chat_date;
     public boolean is_deleted = false;
@@ -24,12 +25,13 @@ public class Chat {
 
 
 
-    public Chat(String chat_id, boolean is_received, String content, String chat_date, boolean is_deleted) {
+    public Chat(String chat_id, boolean is_received, String content, String chat_date, boolean is_deleted,String user_id) {
         this.chat_id = chat_id;
         this.is_received = is_received;
         this.content = content;
         this.chat_date = chat_date;
         this.is_deleted = is_deleted;
+        this.user_id = user_id;
     }
 
     public Chat() {

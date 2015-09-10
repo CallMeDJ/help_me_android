@@ -70,7 +70,7 @@ public class StaticDatas {
         
         
 		for(int i = 0 ; i < 50 ; i ++){
-			Chat chat = new Chat(i+"",false, "收到消息"+i, "刚刚", false);
+			Chat chat = new Chat(i+"",false, "收到消息"+i, "刚刚", false,i+"");
 			int randomCode = (int)(Math.random()*5);
 			if(i%randomCode <= 2){
 				chat.setIs_deleted(true);

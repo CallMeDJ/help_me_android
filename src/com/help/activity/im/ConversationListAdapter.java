@@ -20,6 +20,16 @@ public ConversationListAdapter(Context context,List<Conversation> conversationLi
 	this.conversationList = conversationList;
 }
 
+public void addConversationList(List<Conversation> newConversationList){
+	conversationList.addAll(newConversationList);
+	this.notifyDataSetChanged();
+}
+
+public void refleshConversationList(List<Conversation> newConversationList){
+	conversationList = newConversationList;
+	this.notifyDataSetChanged();
+}
+
 @Override
 public int getCount() {
 	// TODO Auto-generated method stub

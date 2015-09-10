@@ -3,7 +3,6 @@ package com.help.activity.im;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
-import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -15,11 +14,9 @@ import android.widget.TextView;
 
 import com.example.help.R;
 import com.help.activity.StaticDatas;
-import com.help.base.AppManager;
 import com.help.base.BaseActivity;
-import com.help.listview.XListView;
-import com.help.listview.XListView.IXListViewListener;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -30,7 +27,7 @@ public class ChatActivity extends BaseActivity{
     private List<Chat> chatList;
     private Conversation conversation;
     private ListView chat_list;
-    private  ChatAdapter adapter;
+    private  ChatAdapter chatAdapter;
     public ChatBoradcastReceiver chatBoradcastReceiver;
     
     @Override
@@ -47,15 +44,11 @@ public class ChatActivity extends BaseActivity{
         
         setTitle(conversation.user_name);
         chat_list = (ListView)findViewById(R.id.chat_list);
-        adapter = new ChatAdapter();
-        chat_list.setAdapter(adapter);
-        adapter.notifyDataSetChanged();
+        chatAdapter = new ChatAdapter();
+        chat_list.setAdapter(chatAdapter);
+        chatAdapter.notifyDataSetChanged();
     }
     
-	private void appendMessage(List<Chat> chatList){
-		this.chatList.addAll(chatList);
-		adapter.notifyDataSetChanged();
-	}
 	
 	
 	
@@ -77,6 +70,11 @@ public class ChatActivity extends BaseActivity{
 		public long getItemId(int position) {
 			// TODO Auto-generated method stub
 			return Integer.parseInt(getItem(position).getChat_id());
+		}
+		
+		public void addChatList(List<Chat> chatList){
+			chatList.addAll(chatList);
+			chatAdapter.notifyDataSetChanged();
 		}
 
 		@Override
@@ -125,7 +123,18 @@ public class ChatActivity extends BaseActivity{
 	}
 	
 	public void handleNewChat(){
-		
+		List<Chat> newChatList = ChatManager.chatList;
+		this.chatAdapter.addChatList(chatFilter(newChatList));
+	}
+	
+	public List<Chat> chatFilter(List<Chat> newChatList){
+		List<Chat> chatList = new ArrayList<Chat>();
+		for(Chat chat : newChatList){
+			if(chat.user_id.equals(conversation.user_id)){
+				chatList.add(chat);
+			}
+		}
+		return chatList;
 	}
 	
 	private class ChatBoradcastReceiver extends BroadcastReceiver{

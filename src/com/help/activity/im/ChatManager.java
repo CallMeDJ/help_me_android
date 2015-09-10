@@ -17,6 +17,7 @@ import com.loopj.android.http.JsonHttpResponseHandler;
 public class ChatManager {
 	
 	public static String NEW_CHAT_COME_ACTION = "com.help.newChatCome";
+	public static String NEW_CHAT_COME_NOTIFICATION_ACTION = "com.help.newChatComeNotification";
 	
 	public static List<Chat> chatList = new ArrayList<Chat>();
 	public synchronized static void refleshChat(final Context context){	
@@ -35,6 +36,9 @@ public class ChatManager {
 						chat.chat_date = current_data.getString("chat_date");
 						chat.is_received = current_data.getBoolean("is_received");
 						chatList.add(chat);
+						Intent intent = new Intent();
+						intent.setAction(NEW_CHAT_COME_NOTIFICATION_ACTION);
+						context.sendBroadcast(intent);
 					}
 					Intent newChatListCome = new Intent();
 					newChatListCome.setAction(ChatManager.NEW_CHAT_COME_ACTION);
