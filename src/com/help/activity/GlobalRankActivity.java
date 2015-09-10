@@ -20,6 +20,7 @@ public class GlobalRankActivity extends BaseActivity{
 	protected void initView() {
 		// TODO Auto-generated method stub
 		super.initView();
+		setTitle("排行榜");
 		listView = (XListView) findViewById(R.id.global_rank);
 		GlobalRankListAdapter adapter = new GlobalRankListAdapter(this);
 		adapter.setDataList(StaticDatas.globalRankList);

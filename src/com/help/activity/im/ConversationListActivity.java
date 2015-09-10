@@ -8,18 +8,17 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 
 import com.example.help.R;
-import com.help.activity.StaticDatas;
 import com.help.base.BaseActivity;
 import com.help.listview.XListView;
 
-public class MessageActivity extends BaseActivity{
+public class ConversationListActivity extends BaseActivity{
 
 	private XListView conversation_list;
-	public List<Chat> conversationList = new ArrayList<Chat>();
+	public List<Conversation> conversationList = new ArrayList<Conversation>();
 	@Override
 	protected int layoutId() {
 		// TODO Auto-generated method stub
-		return R.layout.message_main;
+		return R.layout.conversation_list_main;
 	}
 
 	@Override
@@ -31,10 +30,10 @@ public class MessageActivity extends BaseActivity{
 		Bitmap meinv_icon_3 = BitmapFactory.decodeResource(getResources(), R.drawable.meinv3);
 		Bitmap meinv_icon_4 = BitmapFactory.decodeResource(getResources(), R.drawable.meinv4);
 			
-		Chat meinv1 = new Chat(meinv_icon_1, "小美", "你欠我的钱还没还呢", "星期一");
-		Chat meinv2 = new Chat(meinv_icon_2, "芳芳", "你在哪里吖", "星期六");
-		Chat meinv3 = new Chat(meinv_icon_3, "怡茜", "你吃饭了吗", "昨天");
-		Chat meinv4 = new Chat(meinv_icon_4, "小雪", "我去洗澡了", "星期三");
+		Conversation meinv1 = new Conversation(meinv_icon_1, "怀薇", "[微信红包]", "剩余23小时");
+		Conversation meinv2 = new Conversation(meinv_icon_2, "向秋", "[微信红包]", "剩余20小时");
+		Conversation meinv3 = new Conversation(meinv_icon_3, "凡白", "[微信红包]", "剩余8小时");
+		Conversation meinv4 = new Conversation(meinv_icon_4, "从蕾", "[微信红包]", "剩余6小时");
 		conversationList.add(meinv1);
 		conversationList.add(meinv2);
 		conversationList.add(meinv3);

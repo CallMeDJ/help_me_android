@@ -3,6 +3,7 @@ package com.help.activity.im;
 import java.util.List;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,8 +15,8 @@ import com.example.help.R;
 
 public class ConversationListAdapter extends BaseAdapter{
 	Context context;
-	List<Chat> conversationList;
-public ConversationListAdapter(Context context,List<Chat> conversationList){
+	List<Conversation> conversationList;
+public ConversationListAdapter(Context context,List<Conversation> conversationList){
 	this.context = context;
 	this.conversationList = conversationList;
 }
@@ -27,7 +28,7 @@ public int getCount() {
 }
 
 @Override
-public Chat getItem(int position) {
+public Conversation getItem(int position) {
 	// TODO Auto-generated method stub
 	return conversationList.get(position);
 }
@@ -39,20 +40,41 @@ public long getItemId(int position) {
 }
 
 @Override
-public View getView(int position, View view, ViewGroup parentView) {
+public View getView(final int position, View view, ViewGroup parentView) {
 	View conversation_item = LayoutInflater.from(context).inflate(R.layout.conversation_list_item, null);
-	Chat chat = getItem(position);
+	Conversation conversation = getItem(position);
 	ImageView icon = (ImageView) conversation_item.findViewById(R.id.conversation_user_icon);
 	TextView user_name = (TextView)conversation_item.findViewById(R.id.conversation_user_name);
 	TextView content = (TextView)conversation_item.findViewById(R.id.conversation_content);
 	TextView time = (TextView)conversation_item.findViewById(R.id.conversation_time);
 	
-	icon.setImageBitmap(chat.icon);
-	user_name.setText(chat.user_name);
-	content.setText(chat.content);
-	time.setText(chat.date);
-	
+	icon.setImageBitmap(conversation.icon);
+	user_name.setText(conversation.user_name);
+	content.setText(conversation.content);
+	time.setText(conversation.date);
+
+	View.OnClickListener starConversation = new View.OnClickListener() {
+		@Override
+		public void onClick(View view) {
+			performClick(position);
+			ConversationListAdapter.this.notifyDataSetChanged();
+
+		}
+	};
+
+	conversation_item.setOnClickListener(starConversation);
 	return conversation_item;
 }
+
+	public void performClick(int position){
+		Conversation conversation = getItem(position);
+		Intent i = new Intent(context,ChatActivity.class);
+		i.putExtra("user_name", conversation.user_name);
+		context.startActivity(i);
+
+	}
+
+
+
 
 }

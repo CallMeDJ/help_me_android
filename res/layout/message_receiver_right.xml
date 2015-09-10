@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="10dp">
+
+    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+              android:text="14:22"
+              android:layout_alignParentTop="true"
+              android:id="@+id/message_time_right"
+              android:layout_marginBottom="5dp"
+              android:layout_centerHorizontal="true"
+              android:background="@color/deep_gray"
+              android:textColor="@color/white"
+              android:padding="4dp"/>
+
+    <LinearLayout android:orientation="horizontal"
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:layout_below="@id/message_time_right"
+                  android:layout_alignParentRight="true">
+
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                  android:text="你好啊"
+                  android:background="@drawable/rc_ic_bubble_right"
+                  android:gravity="left"
+
+                />
+        <ImageView
+                android:id="@+id/conversation_user_icon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/icon_wenzhuanbao"
+                android:layout_marginLeft="5dp"/>
+
+
+    </LinearLayout>
+</RelativeLayout>

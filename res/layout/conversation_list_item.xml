@@ -4,39 +4,43 @@
      android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+              android:padding="0dp"
+              android:layout_margin="0dp"
      >
 <RelativeLayout 
     android:layout_width="match_parent"
     android:layout_height="55dp"
-    android:padding="6dp" >
+    android:paddingRight="6dp"
+    android:layout_marginTop="6dp"
+    android:layout_marginBottom="6dp">
     <ImageView
         android:id="@+id/conversation_user_icon"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:src="@drawable/icon_wenzhuanbao" />
+        android:src="@drawable/icon_wenzhuanbao"/>
 
-    <LinearLayout
+    <RelativeLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
 		android:layout_toRightOf="@id/conversation_user_icon"
-        android:orientation="vertical"
-        android:paddingLeft="5dp" >
+            >
 
         <TextView
             android:id="@+id/conversation_user_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Star"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+                android:layout_alignParentTop="true"/>
         <TextView
             android:id="@+id/conversation_content"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="[帮吗红包]"
             android:layout_marginTop="4dp"
-            android:textColor="@color/deep_gray" />
-    </LinearLayout>
+            android:textColor="@color/deep_gray"
+                android:layout_alignParentBottom="true"/>
+    </RelativeLayout>
 
     <TextView
         android:id="@+id/conversation_time"

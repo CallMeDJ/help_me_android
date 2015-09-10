@@ -1,14 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-              android:layout_width="140dp"
+              android:layout_width="160dp"
     android:layout_height="wrap_content"
     android:orientation="vertical" >
 
-    <LinearLayout android:layout_width="140dp" android:layout_height="wrap_content" android:orientation="horizontal">
+    <LinearLayout android:layout_width="160dp" android:layout_height="wrap_content" android:orientation="horizontal">
         <TextView
                 android:id="@+id/position_left_content"
-                android:layout_width="60dp"
+                android:layout_width="70dp"
                 android:layout_height="wrap_content"
+                android:paddingRight="10dp"
                 android:text="实习生"
                 android:layout_gravity="center"
                 android:gravity="center"
@@ -22,9 +23,10 @@
                 android:clickable="false"/>
         <TextView
                 android:id="@+id/position_right_content"
-                android:layout_width="60dp"
+                android:layout_width="70dp"
                 android:layout_height="wrap_content"
                 android:text="实习生"
+                android:paddingLeft="10dp"
                 android:gravity="center"
                 android:layout_gravity="center_vertical"/>
     </LinearLayout>
