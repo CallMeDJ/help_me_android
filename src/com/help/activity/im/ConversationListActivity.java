@@ -1,14 +1,11 @@
 package com.help.activity.im;
 
-import java.util.ArrayList;
 import java.util.List;
 
 
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.os.Bundle;
 
 import com.example.help.R;
@@ -17,12 +14,21 @@ import com.help.base.BaseActivity;
 import com.help.listview.XListView;
 import com.help.listview.XListView.IXListViewListener;
 
+/**
+ * @author Administrator
+ *
+ */
+/**
+ * @author Administrator
+ *
+ */
 public class ConversationListActivity extends BaseActivity implements IXListViewListener{
 
 	private XListView conversation_list;
-	public List<Conversation> conversationList;
+	private List<Conversation> conversationList;
 	private ConversationBoradcastReceiver conversationBoradcastReceiver;
 	private ConversationListAdapter conversationListAdapter;
+	
 	@Override
 	protected int layoutId() {
 		// TODO Auto-generated method stub
@@ -34,20 +40,18 @@ public class ConversationListActivity extends BaseActivity implements IXListView
 		super.onCreate(bundle);
 		conversationBoradcastReceiver = new ConversationBoradcastReceiver();
 		registerReceiver(conversationBoradcastReceiver, null);
-		
 	}
+	
 	@Override
 	protected void onDestroy(){
 		super.onDestroy();
 		unregisterReceiver(conversationBoradcastReceiver);
 	}
 	
-	
 	@Override
 	protected void initView(){
 		super.initView();
 		setTitle("聊天");
-		
 		
 		conversationList = StaticDatas.conversationList;
 		conversation_list = (XListView)findViewById(R.id.conversation_list);
@@ -56,40 +60,47 @@ public class ConversationListActivity extends BaseActivity implements IXListView
 		conversation_list.setAdapter(conversationListAdapter);
 		conversation_list.deferNotifyDataSetChanged();
 		
-		
-		
-		
-		//open_conversation_list = (Button)findViewById(R.id.open_conversation_list);
-		//open_conversation = (Button)findViewById(R.id.open_conversation);
 	}
 
-	
+
+
+	/**
+	 * @CREATE_TIME : 2015-9-11-上午9:41:16
+	 * @Author : Administrator
+	 * @ReturnType : void
+	 * @Motify_USER Administrator
+	 * @Motify_TIME : 2015-9-11-上午9:41:16
+	 * @Function_Usage : 处理新的聊天列表
+	 */
 	public void handleNewChat(){
 		List<Chat> newChatList = ChatManager.chatList;
 		for(Chat chat : newChatList){
 			
 		}
-		
-		
 	}
+	
 	@Override
 	public void onRefresh() {
-		// TODO Auto-generated method stub
 		ChatManager.refleshChat(this);
-		
 	}
 
 	@Override
 	public void onLoadMore() {
 		// TODO Auto-generated method stub
-		
 	}
+	
+	/**
+	 * @author Administrator
+	 * 
+	 *
+	 */
 	private class ConversationBoradcastReceiver extends BroadcastReceiver{
 		@Override
 		public void onReceive(Context context, Intent intent) {
-			// TODO Auto-generated method stub
-			ConversationListActivity.this.handleNewChat();
-		}
+			if(intent.getAction().endsWith(ChatManager.NEW_CHAT_COME_ACTION)){
+				ConversationListActivity.this.handleNewChat();
+			}
+		}	
 	}
 
 }

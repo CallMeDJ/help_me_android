@@ -125,11 +125,27 @@ public class ChatActivity extends BaseActivity{
 		unregisterReceiver(chatBoradcastReceiver);
 	}
 	
+	/**
+	 * @CREATE_TIME : 2015-9-11-下午4:37:22
+	 * @Author : Administrator
+	 * @ReturnType : void
+	 * @Motify_USER Administrator
+	 * @Motify_TIME : 2015-9-11-下午4:37:22
+	 * @Function_Usage 处理新收到的聊天记录
+	 */
 	public void handleNewChat(){
 		List<Chat> newChatList = ChatManager.chatList;
 		this.chatAdapter.addChatList(chatFilter(newChatList));
 	}
 	
+	/**
+	 * @CREATE_TIME : 2015-9-11-下午4:37:52
+	 * @Author : Administrator
+	 * @ReturnType : List<Chat>
+	 * @Motify_USER Administrator
+	 * @Motify_TIME : 2015-9-11-下午4:37:52
+	 * @Function_Usage 对收到的新聊天记录进行过滤，只需要本次会话的数据
+	 */
 	public List<Chat> chatFilter(List<Chat> newChatList){
 		List<Chat> chatList = new ArrayList<Chat>();
 		for(Chat chat : newChatList){
@@ -144,7 +160,10 @@ public class ChatActivity extends BaseActivity{
 		@Override
 		public void onReceive(Context context, Intent intent) {
 			// TODO Auto-generated method stub
+			
+			if(intent.getAction().endsWith(ChatManager.NEW_CHAT_COME_ACTION)){
 			ChatActivity.this.handleNewChat();
+			}
 		}
 	}
 

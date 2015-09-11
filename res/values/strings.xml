@@ -115,4 +115,10 @@
     <string name="set_gesture_pattern_reason">手势密码将在您开启程序是启动</string>
     <string name="reset_gesture_code">重设手势密码</string>
 
+    
+    <!-- chat -->
+    
+    
+    <string name="send">发送</string>
+    
 </resources>
