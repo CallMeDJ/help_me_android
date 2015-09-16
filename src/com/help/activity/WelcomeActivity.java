@@ -1,27 +1,37 @@
 package com.help.activity;
 
+import java.util.Random;
+
 import android.app.Dialog;
 import android.content.Intent;
+import android.view.View;
 import android.view.animation.AlphaAnimation;
 import android.view.animation.Animation;
 import android.view.animation.Animation.AnimationListener;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.example.help.R;
 import com.help.base.BaseActivity;
-import com.help.been.UserMode;
 import com.help.util.CommonUtil;
 import com.help.util.ProcessDialogUtil;
 import com.help.util.Tool;
 
 public class WelcomeActivity extends BaseActivity {
 
-	private ImageView welcomeImg = null;
+	// private ImageView welcomeImg = null;
 
 	// 进入引导页的标记
 	private Boolean toGuide = true;
 
+	private TextView tv1 = null;
+	private TextView tv2 = null;
+
 	private Dialog juhua = null;
+
+	private KeywordsFlow keywordsFlow;
+
+	public static final String[] keywords = {"帮么","帮","帮么","帮","帮么","帮","帮么","帮","帮么","帮","帮么","帮","帮么"};
 
 	@Override
 	protected int layoutId() {
@@ -47,29 +57,56 @@ public class WelcomeActivity extends BaseActivity {
 
 		juhua = new ProcessDialogUtil(WelcomeActivity.this);
 
-		welcomeImg = (ImageView) this.findViewById(R.id.welcome_img);
+		// welcomeImg = (ImageView) this.findViewById(R.id.welcome_img);
+		tv1 = (TextView) this.findViewById(R.id.tv_wel1);
+		tv2 = (TextView) this.findViewById(R.id.tv_wel2);
+		tv1.setVisibility(View.GONE);
+		tv2.setVisibility(View.GONE);
 	}
 
 	@Override
 	protected void doOtherThing() {
 		// TODO Auto-generated method stub
 		super.doOtherThing();
-		AlphaAnimation anima = new AlphaAnimation(0.3f, 1.0f);
-		anima.setDuration(2000);// 设置动画显示时间
-		welcomeImg.startAnimation(anima);
+		AlphaAnimation anima = new AlphaAnimation(0.1f, 1.0f);
+		anima.setDuration(5000);// 设置动画显示时间
+		// welcomeImg.startAnimation(anima);
+		// tv1.startAnimation(anima);
+		// tv2.startAnimation(anima);
 		anima.setAnimationListener(new AnimationImpl());
+
+		keywordsFlow = (KeywordsFlow) findViewById(R.id.fly_view);
+		keywordsFlow.setDuration(3000l);
+		// 添加
+		feedKeywordsFlow(keywordsFlow, keywords);
+		keywordsFlow.go2Show(KeywordsFlow.ANIMATION_IN);// 开启动画
+		keywordsFlow.startAnimation(anima);
+	}
+
+	/**
+	 * @param keywordsFlow
+	 * @param arr
+	 *            填充的文字
+	 */
+	private static void feedKeywordsFlow(KeywordsFlow keywordsFlow, String[] arr) {
+		Random random = new Random();
+		for (int i = 0; i < KeywordsFlow.MAX; i++) {
+			int ran = random.nextInt(arr.length);
+			String tmp = arr[ran];
+			keywordsFlow.feedKeyword(tmp);
+		}
 	}
 
 	private class AnimationImpl implements AnimationListener {
 
 		@Override
 		public void onAnimationStart(Animation animation) {
-			welcomeImg.setBackgroundResource(R.drawable.bg4);
+			// welcomeImg.setBackgroundResource(R.drawable.bg3);
 		}
 
 		@Override
 		public void onAnimationEnd(Animation animation) {
-			skip(); // 动画结束后跳转到别的页面
+			 skip(); // 动画结束后跳转到别的页面
 		}
 
 		@Override
@@ -78,6 +115,27 @@ public class WelcomeActivity extends BaseActivity {
 		}
 
 	}
+
+//	private class AnimationImpl2 implements AnimationListener {
+//
+//		@Override
+//		public void onAnimationStart(Animation animation) {
+//			// welcomeImg.setBackgroundResource(R.drawable.bg3);
+//		}
+//
+//		@Override
+//		public void onAnimationEnd(Animation animation) {
+//			keywordsFlow.rubKeywords();
+//			feedKeywordsFlow(keywordsFlow, keywords);
+//			keywordsFlow.go2Show(KeywordsFlow.ANIMATION_IN);// 开启动画
+//		}
+//
+//		@Override
+//		public void onAnimationRepeat(Animation animation) {
+//
+//		}
+//
+//	}
 
 	// 在此判断缓存文件，是否是第一次登录，进入到引导页，否则判断是否登录，否则直接跳转到主页
 	private void skip() {

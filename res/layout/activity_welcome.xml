@@ -1,12 +1,42 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity" >
 
- 	<ImageView
- 	    android:id="@+id/welcome_img"
- 	    android:layout_width="match_parent"
- 	    android:layout_height="match_parent" />
+    <com.help.activity.KeywordsFlow
+        android:id="@+id/fly_view"
+        android:background="@drawable/bg3"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+    </com.help.activity.KeywordsFlow>
 
-</RelativeLayout>
+    <!-- <ImageView
+        android:id="@+id/welcome_img"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" /> -->
+
+    <TextView
+        android:id="@+id/tv_wel1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="20dp"
+        android:padding="10dp"
+        android:text="帮么"
+        android:textColor="@color/white"
+        android:textSize="30sp" />
+
+    <TextView
+        android:id="@+id/tv_wel2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:layout_marginBottom="20dp"
+        android:gravity="center"
+        android:padding="10dp"
+        android:text="地球这么大，帮么！"
+        android:textColor="@color/white"
+        android:textSize="16sp" />
+
+</FrameLayout>
