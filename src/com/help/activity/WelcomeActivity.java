@@ -31,7 +31,7 @@ public class WelcomeActivity extends BaseActivity {
 
 	private KeywordsFlow keywordsFlow;
 
-	public static final String[] keywords = {"帮么","帮","帮么","帮","帮么","帮","帮么","帮","帮么","帮","帮么","帮","帮么"};
+	public static final String[] keywords = {"帮么","帮","帮么","帮","帮么","帮","帮么","帮","帮么","帮","帮么","帮","帮么","帮么","帮","帮么","帮","帮么","帮","帮么"};
 
 	@Override
 	protected int layoutId() {
@@ -68,7 +68,7 @@ public class WelcomeActivity extends BaseActivity {
 	protected void doOtherThing() {
 		// TODO Auto-generated method stub
 		super.doOtherThing();
-		AlphaAnimation anima = new AlphaAnimation(0.1f, 1.0f);
+		AlphaAnimation anima = new AlphaAnimation(0.3f, 1.0f);
 		anima.setDuration(5000);// 设置动画显示时间
 		// welcomeImg.startAnimation(anima);
 		// tv1.startAnimation(anima);
