@@ -122,8 +122,9 @@ public class SheZhiActivity extends BaseActivity implements OnClickListener {
 	// 清除登录账户，仅仅是登录人的登录状态，
 	private void clearLogin() {
 		// CommonUtil.clearByKey(SheZhiActivity.this, "loginState", "", "");
-		Tool.writeData(SheZhiActivity.this, "loginState", "zhanghu", "");
-		Tool.writeData(SheZhiActivity.this, "cooke", "cookieValue", "");
+		Tool.writeData(SheZhiActivity.this, "user", "login", "");
+		Tool.writeData(SheZhiActivity.this, "user", "userId", "");
+		Tool.writeData(SheZhiActivity.this, "user", "cookieValue", "");
 	}
 
 }

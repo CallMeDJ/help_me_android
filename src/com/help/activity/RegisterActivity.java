@@ -3,6 +3,10 @@ package com.help.activity;
 import java.util.Timer;
 import java.util.TimerTask;
 
+import org.apache.http.Header;
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import android.annotation.SuppressLint;
 import android.app.Dialog;
 import android.content.Intent;
@@ -20,8 +24,12 @@ import com.example.help.R;
 import com.help.base.BaseActivity;
 import com.help.been.UserMode;
 import com.help.util.ProcessDialogUtil;
+import com.help.util.StaticVariable;
 import com.help.util.Tool;
 import com.help.util.WebViewActivity;
+import com.loopj.android.http.AsyncHttpResponseHandler;
+import com.loopj.android.http.ESalesHttpClient;
+import com.loopj.android.http.RequestParams;
 
 public class RegisterActivity extends BaseActivity implements OnClickListener{
 
@@ -46,7 +54,6 @@ public class RegisterActivity extends BaseActivity implements OnClickListener{
 
 	private Dialog juhua = null;
 	
-	private TextView xieyi = null;
 	
 	@Override
 	protected int layoutId() {
@@ -71,8 +78,7 @@ public class RegisterActivity extends BaseActivity implements OnClickListener{
 		huoqu = (Button) findViewById(R.id.register_tv_huoqu);
 		cb_tongyi = (CheckBox) findViewById(R.id.register_cb);
 		register = (Button) findViewById(R.id.register_register);
-		
-		xieyi = (TextView)findViewById(R.id.register_xieyi);
+
 
 	}
 
@@ -83,8 +89,6 @@ public class RegisterActivity extends BaseActivity implements OnClickListener{
 		titleBarBack.setOnClickListener(this);
 		huoqu.setOnClickListener(this);
 		register.setOnClickListener(this);
-		
-		xieyi.setOnClickListener(this);
 		
 	}
 
@@ -98,44 +102,25 @@ public class RegisterActivity extends BaseActivity implements OnClickListener{
 			break;
 		case R.id.register_tv_huoqu:
 			// 弹出对话框提示验证码发送到手机号码， -------------有问题
-			if (!"".equals(et_phone) || !"".equals(et_pass)
-					|| !"".equals(et_repass)) {
+			if (!"".equals(et_phone.getText().toString()) || !"".equals(et_pass.getText().toString())
+					|| !"".equals(et_repass.getText().toString())) {
+				startTimer();
 			}
 
 			break;
 		case R.id.register_register:
 			// 注册成功直接登录，将 该用户的的信息标记为已登录，finish掉注册页面，加上动画 -----判断checkBox是否勾上
 			// Toast.makeText(RegisterActivity.this, "注册成功", 1000).show();
-			if(cb_tongyi.isChecked()){
-
-			}else{
-				Toast.makeText(RegisterActivity.this, "请选择同意注册协议", Toast.LENGTH_SHORT).show();
+			if (!"".equals(et_phone.getText().toString()) || !"".equals(et_pass.getText().toString())
+					|| !"".equals(et_repass.getText().toString())) {
+				loadHttp();
 			}
-			break;
-		case R.id.register_xieyi:
-			Intent intent = new Intent(RegisterActivity.this,WebViewActivity.class);
-			intent.putExtra("title", "注册协议");
-			intent.putExtra("url","http://www.baidu.com");
-			startActivity(intent);
-			
 			break;
 		default:
 			break;
 		}
 
 	}
-
-	// 修改登录状态
-	private void reviseLoginState() {
-		// CommonUtil.addConfigInfo(LoginActivity.this, "loginState", "login",
-		// "",
-		// "");
-		// 将当前用户保存到文件中
-		// UserMode user = Tool.getUser(RegisterActivity.this);
-		Tool.writeData(RegisterActivity.this, "loginState", "zhanghu",
-				allUser.getYhzh());
-	}
-
 
 	// 获取验证码的模块
 	private Timer mTimer = null;
@@ -208,4 +193,76 @@ public class RegisterActivity extends BaseActivity implements OnClickListener{
 		canclTimer();
 	}
 
+	private void loadHttp() {
+		RequestParams params = new RequestParams();
+		params.put("userPhone", et_phone.getText().toString());
+		params.put("userPassword", et_pass.getText().toString());
+		params.put("userIdentity", et_tuijian.getText().toString());//身份整好
+		params.put("verification", et_yanzhengma.getText().toString());//验证码
+
+		ESalesHttpClient.requestGet(this, CommonAPI.API_REGISTER, params,
+				new AsyncHttpResponseHandler() {
+
+					@Override
+					public void onStart() {
+						// TODO Auto-generated method stub
+						super.onStart();
+						juhua.show();
+					}
+
+					@Override
+					public void onFinish() {
+						// TODO Auto-generated method stub
+						super.onFinish();
+						juhua.dismiss();
+					}
+
+					@Override
+					public void onSuccess(int statusCode, Header[] headers,
+							String content) {
+						// TODO Auto-generated method stub
+						super.onSuccess(statusCode, headers, content);
+						juhua.dismiss();
+						try {
+							JSONObject json = new JSONObject(content);
+							String status = json.getString("status");
+							String datastr = json.getString("data");
+							JSONObject data = new JSONObject(datastr);
+							if ("true".equals(status)) {
+								Toast.makeText(RegisterActivity.this, "注册成功",
+										1000).show();
+								Intent intent3 = new Intent(RegisterActivity.this,
+										MainActivity.class);
+								StaticVariable.put(StaticVariable.sv_toIndex,
+										"1");
+								startActivity(intent3);
+								Tool.writeData(RegisterActivity.this, "user", "login", "ok");
+								Tool.writeData(RegisterActivity.this, "user", "userId", data.getString("user_id"));
+								finish();
+								anim_right_in();
+							} else if ("false".equals(status)) {
+								String errinfo = json.getString("info");
+								Toast.makeText(RegisterActivity.this, errinfo,
+										1000).show();
+							}
+
+						} catch (JSONException e) {
+							// TODO Auto-generated catch block
+							e.printStackTrace();
+						}
+					}
+
+					@Override
+					public void onFailure(Throwable error, String content) {
+						// TODO Auto-generated method stub
+						super.onFailure(error, content);
+						juhua.dismiss();
+						Toast.makeText(RegisterActivity.this, content, 1000)
+								.show();
+					}
+
+				});
+	}
+
+	
 }

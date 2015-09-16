@@ -1,5 +1,7 @@
 package com.help.activity.index;
 
+import java.io.Serializable;
+
 import android.graphics.Bitmap;
 import android.view.View;
 
@@ -10,7 +12,19 @@ import com.baidu.mapapi.map.Marker;
  * Created by Well_Done on 2015/8/25.
  */
 // ï¿½ï¿½ï¿½ï¿½ï¿½à£¨ï¿½ï¿½Í¼ï¿½ï¿½ï¿½ï¿½Ê±Ê¹ï¿½Ã£ï¿½
-public class TaskObject {
+public class TaskObject  implements Serializable{
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	private String orderId;// id
+	public String getOrderId() {
+		return orderId;
+	}
+
+	public void setOrderId(String orderId) {
+		this.orderId = orderId;
+	}
 
 	private String mmasterPerson;// Ê±¼ä
 	private String mtaskContext;// ÄÚÈÝ
@@ -32,8 +46,9 @@ public class TaskObject {
 	TaskObject() {
 	}
 
-	TaskObject(String mmasterPerson, String mtaskContext, String add,
+	TaskObject(String id ,String mmasterPerson, String mtaskContext, String add,
 			String length, String mtaskReward, double mLat, double mLng) {
+		this.orderId = id;
 		this.mmasterPerson = mmasterPerson;
 		this.mtaskContext = mtaskContext;
 		this.mtaskReward = mtaskReward;

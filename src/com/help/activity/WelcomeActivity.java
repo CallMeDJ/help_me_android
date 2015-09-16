@@ -88,9 +88,8 @@ public class WelcomeActivity extends BaseActivity {
 
 			// 获取个人资料信息 如果有用户资料，则刷新
 			// TODO Auto-generated method stub
-
-			UserMode user = Tool.getUser(WelcomeActivity.this);
-			if (user== null) {
+			String a = Tool.readData(this, "user", "login");
+			if (!"ok".equals(a)) {
 				startActivity(new Intent(WelcomeActivity.this,
 						LoginActivity.class));
 				anim_right_in();
@@ -117,7 +116,6 @@ public class WelcomeActivity extends BaseActivity {
 
 	// 方法
 	private void toIntent() {
-		UserMode user = Tool.getUser(this);
 		startActivity(new Intent(this, MainActivity.class));
 		anim_right_in();
 		finish();

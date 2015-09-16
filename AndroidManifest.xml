@@ -8,7 +8,6 @@
         android:minSdkVersion="14"
         android:targetSdkVersion="18" />
 
-    
     <supports-screens
         android:anyDensity="true"
         android:largeScreens="true"
@@ -24,6 +23,12 @@
         <meta-data
             android:name="com.baidu.lbsapi.API_KEY"
             android:value="LRr212S2LV0IQd8Tb7rS0Z04" />
+
+        <service android:name="com.help.activity.index.ServiceDemo" >
+            <intent-filter>
+                <action android:name="com.lql.service.ServiceDemo" />
+            </intent-filter>
+        </service>
 
         <activity
             android:name="com.help.activity.WelcomeActivity"
@@ -45,8 +50,7 @@
             android:theme="@style/AppTheme"
             android:windowSoftInputMode="stateAlwaysHidden" >
         </activity>
-        
-         <activity
+        <activity
             android:name="com.help.activity.im.MessageActivity"
             android:label="@string/app_name"
             android:launchMode="singleTask"

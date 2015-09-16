@@ -122,9 +122,8 @@ public class MoreActivity extends BaseActivity implements OnClickListener {
 
 	// 清除登录账户，仅仅是登录人的登录状态，
 	private void clearLogin() {
-		// CommonUtil.clearByKey(SheZhiActivity.this, "loginState", "", "");
-		Tool.writeData(MoreActivity.this, "loginState", "zhanghu", "");
-		Tool.writeData(MoreActivity.this, "cooke", "cookieValue", "");
+		Tool.writeData(MoreActivity.this, "user", "login", "");
+		Tool.writeData(MoreActivity.this, "user", "userId", "");
 	}
 
 	@Override

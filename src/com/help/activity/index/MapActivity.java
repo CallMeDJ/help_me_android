@@ -70,15 +70,15 @@ public class MapActivity extends Activity {
 	// 覆盖窗口
 	private InfoWindow mInfoWindow;
 
-	public void setmTaskDataList(List mTaskDataList) {
-		this.mTaskDataList = mTaskDataList;
-	}
+//	public void setmTaskDataList(List mTaskDataList) {
+//		this.mTaskDataList = mTaskDataList;
+//	}
 
 	// 模拟外部调用，测试时，直接供给数据，并把数据传到本Activity的mTaskDataList
-	public void onTestOutside() {
-		TaskObjectList taskObjList = new TaskObjectList();
-		this.setmTaskDataList(taskObjList.getmTaskList());
-	}
+//	public void onTestOutside() {
+//		TaskObjectList taskObjList = new TaskObjectList();
+//		this.setmTaskDataList(taskObjList.getmTaskList());
+//	}
 
 	public void initTaskList() {
 		// BitmapDescriptor bd =
@@ -264,7 +264,8 @@ public class MapActivity extends Activity {
 
 		layout = (LinearLayout) findViewById(R.id.map_item_layout);
 
-		this.onTestOutside();// 外部调用，
+		Intent intent = getIntent();
+		mTaskDataList = (List) intent.getSerializableExtra("taskList");
 
 		this.initLocation();
 		this.initOverlay();

@@ -123,7 +123,7 @@ public class MainActivity extends ActivityGroup implements OnClickListener {
 				destroy(activityName);
 				container.removeView(lytMap.get(activityName));
 				lytMap.remove(activityName);
-			} else {
+			} else { 
 				BaseActivity bA = (BaseActivity) localActivityManager
 						.getActivity(activityName);
 				// bA.refresh(b);
@@ -170,7 +170,7 @@ public class MainActivity extends ActivityGroup implements OnClickListener {
 	public void onClick(View v) {
 		switch (v.getId()) {
 		case R.id.rbIndex:
-			setContainerView("index", IndexActivity.class, null, false);
+			setContainerView("index", IndexActivity.class, null, true);
 			rbIndex.setChecked(true);
 			BackKeyCount = 0;
 			break;
@@ -279,7 +279,7 @@ public class MainActivity extends ActivityGroup implements OnClickListener {
 		String toMine = StaticVariable.get(StaticVariable.sv_toMine);
 		String toMore = StaticVariable.get(StaticVariable.sv_toMore);
 		if (toIndex.equals("1")) {
-			toTab(R.id.rbIndex, null, false);
+			toTab(R.id.rbIndex, null, true);
 		}
 		if (toTask.equals("2")) {
 			toTab(R.id.rbTask, null, false);
