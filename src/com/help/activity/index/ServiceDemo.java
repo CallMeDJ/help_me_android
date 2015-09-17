@@ -89,7 +89,7 @@ public class ServiceDemo extends Service {
 		return super.onStartCommand(intent, flags, startId);
 	}
 
-	private String str1 = "";
+	//private String str1 = "";
 
 	public void toRequest1() {
 		RequestParams params = new RequestParams();
@@ -133,7 +133,7 @@ public class ServiceDemo extends Service {
 
 								String orderstatus = data
 										.getString("order_status");
-								if (!str1.equals(orderstatus)) {
+								//if (!str1.equals(orderstatus)) {
 									Toast.makeText(ServiceDemo.this,
 											orderstatus, 2000).show();
 									if(orderstatus.indexOf("订单已被接受")!=-1){
@@ -151,9 +151,9 @@ public class ServiceDemo extends Service {
 										
 										startActivity(intent);
 									}
-								} else {
-									str1 = orderstatus;
-								}
+								//} else {
+								//	str1 = orderstatus;
+								//}
 								
 
 							} else if ("false".equals(status)) {

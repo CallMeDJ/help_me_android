@@ -13,6 +13,8 @@ import android.annotation.SuppressLint;
 import android.app.AlertDialog;
 import android.app.Dialog;
 import android.app.ProgressDialog;
+import android.content.Intent;
+import android.net.Uri;
 import android.os.CountDownTimer;
 import android.text.format.DateFormat;
 import android.view.KeyEvent;
@@ -57,6 +59,8 @@ public class JieShouRenWuActivity extends BaseActivity implements
 	private Button cancel = null;
 	// 确认完成
 	private Button submit = null;
+	//发送消息
+	private Button sendmsg = null;
 
 	private Dialog dialog = null;
 	// private Dialog juhua = null;
@@ -119,6 +123,7 @@ public class JieShouRenWuActivity extends BaseActivity implements
 
 		cancel = (Button) findViewById(R.id.jieshou_cancel);
 		submit = (Button) findViewById(R.id.jieshou_submit);
+		sendmsg = (Button) findViewById(R.id.jieshou_info);
 
 		// toRequest();
 
@@ -141,6 +146,10 @@ public class JieShouRenWuActivity extends BaseActivity implements
 		titleBarBack.setOnClickListener(this);
 		cancel.setOnClickListener(this);
 		submit.setOnClickListener(this);
+		
+		tv4.setOnClickListener(this);
+		sendmsg.setOnClickListener(this);
+		
 	}
 
 	@Override
@@ -159,6 +168,15 @@ public class JieShouRenWuActivity extends BaseActivity implements
 		case R.id.jieshou_submit:
 			// 按钮
 			getTask1();
+			break;
+		case R.id.jieshou_info:
+			// 按钮
+			break;
+		case R.id.jieshou_tv4:
+			// 
+			Intent intent = new Intent(Intent.ACTION_DIAL, Uri.parse("tel:"
+					+ tv4.getText().toString()));
+			startActivity(intent);
 			break;
 		default:
 			break;

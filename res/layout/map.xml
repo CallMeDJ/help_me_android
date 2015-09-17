@@ -78,7 +78,7 @@
                 android:layout_alignParentLeft="true"
                 android:layout_toLeftOf="@+id/index_ser"
                 android:background="@drawable/button_dot"
-                android:hint=""
+                android:hint="搜索"
                 android:lines="1"
                 android:paddingBottom="5dp"
                 android:paddingLeft="15dp"

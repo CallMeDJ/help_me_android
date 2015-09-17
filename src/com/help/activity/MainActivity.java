@@ -11,6 +11,7 @@ import java.util.TimerTask;
 import android.app.Activity;
 import android.app.ActivityGroup;
 import android.app.LocalActivityManager;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.KeyEvent;
@@ -28,6 +29,7 @@ import com.help.activity.achievement.AchievementActivity;
 import com.help.activity.edit.EditActivity;
 import com.help.activity.im.MessageActivity;
 import com.help.activity.index.IndexActivity;
+import com.help.activity.index.ServiceDemo;
 import com.help.activity.mine.MineActivity;
 import com.help.activity.more.MoreActivity;
 import com.help.activity.task.TaskActivity;
@@ -49,6 +51,8 @@ public class MainActivity extends ActivityGroup implements OnClickListener {
 	// 读取登录状态 ，loginState = login.
 	private Boolean loginState = false;
 
+	private Intent iservice;
+	
 	@SuppressWarnings("deprecation")
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -59,6 +63,11 @@ public class MainActivity extends ActivityGroup implements OnClickListener {
 		initView();
 		initViewListener();
 		doOtherThing();
+		
+		//bindService(new Intent(ServiceDemo.ACTION),conn,Context.BIND_AUTO_CREATE);  
+		iservice = new Intent(ServiceDemo.ACTION);
+		startService(iservice);
+		//Toast.makeText(MainActivity.this, "service on", 1000).show();
 	}
 
 	private void initView() {
@@ -311,6 +320,8 @@ public class MainActivity extends ActivityGroup implements OnClickListener {
 			BackKeyCount++;
 			if (BackKeyCount >= 2) {
 				isOnKeyDown = false;
+				stopService(iservice);
+				//Toast.makeText(MainActivity.this, "service offffffffff", 1000).show();
 				AppManager.getAppManager().appExit(this);
 				finish();
 

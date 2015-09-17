@@ -16,6 +16,7 @@ import android.app.AlertDialog;
 import android.app.Dialog;
 import android.app.DownloadManager.Request;
 import android.content.Intent;
+import android.util.Log;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -96,9 +97,6 @@ public class IndexActivity extends BaseActivity implements OnClickListener,
 		/*
 		 * showMenu(); titleBarMenu.setText("+"); titleBarMenu.setTextSize(18);
 		 */
-
-		startService(new Intent(ServiceDemo.ACTION));  
-		
 		getLocation();
 
 		// list = new ArrayList<Map<String, String>>();
@@ -298,6 +296,7 @@ public class IndexActivity extends BaseActivity implements OnClickListener,
 						// TODO Auto-generated method stub
 						super.onSuccess(statusCode, content);
 						onStopLoad();
+						Log.v("小猪", content);
 						if ("1".equals(shuaxin)) {
 							mTaskList.removeAll(mTaskList);
 						}
@@ -463,7 +462,7 @@ public class IndexActivity extends BaseActivity implements OnClickListener,
 						R.layout.index_list_item, null);
 
 				holder.tv1 = (TextView) convertView
-						.findViewById(R.id.index_item_time);
+						.findViewById(R.id.index_ser);
 
 				holder.tv2 = (TextView) convertView
 						.findViewById(R.id.index_item_content);
@@ -481,6 +480,8 @@ public class IndexActivity extends BaseActivity implements OnClickListener,
 
 			TaskObject obj = (TaskObject) mTaskList.get(position);
 
+//			String a = obj.getMmasterPerson();
+//			String[] b = a.split(" ");
 			holder.tv1.setText(obj.getMmasterPerson());
 			holder.tv2.setText(obj.getMtaskContext());
 			holder.tv3.setText(obj.getMaddress());

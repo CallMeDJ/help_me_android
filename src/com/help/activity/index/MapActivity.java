@@ -4,6 +4,11 @@ import hdodenhof.circleimageview.CircleImageView;
 
 import java.util.List;
 
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.Dialog;
@@ -44,6 +49,11 @@ import com.baidu.mapapi.map.MyLocationData;
 import com.baidu.mapapi.map.OverlayOptions;
 import com.baidu.mapapi.model.LatLng;
 import com.example.help.R;
+import com.help.activity.CommonAPI;
+import com.help.util.Tool;
+import com.loopj.android.http.AsyncHttpResponseHandler;
+import com.loopj.android.http.ESalesHttpClient;
+import com.loopj.android.http.RequestParams;
 
 public class MapActivity extends Activity {
 
@@ -213,7 +223,7 @@ public class MapActivity extends Activity {
 									public void onClick(View arg0) {
 										// TODO Auto-generated method stub
 										//Toast.makeText(MapActivity.this, "---", 1000).show();
-										getTask(mapposition);
+										getTask1(mapposition);
 									}
 								});
 
@@ -408,4 +418,114 @@ public class MapActivity extends Activity {
 		dialog.show();
 	}
 
+	private void getTask1(final int position) {
+
+		View view = LayoutInflater.from(MapActivity.this).inflate(
+				R.layout.dialog_all, null);
+
+		Button tv_cancel = (Button) view.findViewById(R.id.dialog_cancel);
+		Button tv_submit = (Button) view.findViewById(R.id.dialog_submit);
+		tv_cancel.setOnClickListener(new OnClickListener() {
+
+			@Override
+			public void onClick(View arg0) {
+				// TODO Auto-generated method stub
+				dialog.dismiss();
+			}
+		});
+		tv_submit.setOnClickListener(new OnClickListener() {
+
+			@Override
+			public void onClick(View arg0) {
+				// TODO Auto-generated method stub
+				dialog.dismiss();
+				toRequest1(position);
+			}
+		});
+
+		dialog = new AlertDialog.Builder(MapActivity.this).setView(view)
+				.create();
+		dialog.show();
+	}
+	
+	// 倒计时
+		private String time = "600000";
+
+		public void toRequest1(final int position) {
+			TaskObject taskObj = (TaskObject) mTaskDataList.get(position - 1);
+			final String Id = taskObj.getOrderId();
+			RequestParams params = new RequestParams();
+			params.put("userId", Tool.readData(MapActivity.this, "user", "userId"));// 用户id
+			params.put("orderId", Id);// 任务id
+
+			ESalesHttpClient.requestGet(this, CommonAPI.API_ACCEPT, params,
+					new AsyncHttpResponseHandler() {
+						@Override
+						public void onStart() {
+							// TODO Auto-generated method stub
+							super.onStart();
+							// juhua.show();
+						}
+
+						@Override
+						public void onFinish() {
+							// TODO Auto-generated method stub
+							super.onFinish();
+							// juhua.cancel();
+						}
+
+						@Override
+						public void onFailure(Throwable error, String content) {
+							// TODO Auto-generated method stub
+							super.onFailure(error, content);
+							// juhua.cancel();
+						}
+
+						@SuppressLint("SimpleDateFormat")
+						@Override
+						public void onSuccess(int statusCode, String content) {
+							// TODO Auto-generated method stub
+							super.onSuccess(statusCode, content);
+							// juhua.cancel();
+							try {
+								JSONObject json = new JSONObject(content);
+								String status = json.getString("status");
+								if ("true".equals(status)) {
+									JSONArray dataArr = json.getJSONArray("data");
+									JSONObject data = (JSONObject) dataArr.get(0);
+									time = (data.getString("order_limittime") != "null") ? data
+											.getString("order_limittime")
+											: "600000";
+
+									Intent intent = new Intent(MapActivity.this,
+											JieShouRenWuActivity.class);
+									intent.putExtra("show", "jieshou");
+									intent.putExtra("orderId", Id);
+									intent.putExtra("time", time);
+									intent.putExtra("name",
+											data.getString("user_nickname"));
+									intent.putExtra("phone",
+											data.getString("user_phone"));
+									intent.putExtra("weizhi",
+											data.getString("order_location"));
+									startActivity(intent);
+
+								} else if ("false".equals(status)) {
+									String errinfo = json.getString("info");
+									Toast.makeText(MapActivity.this, errinfo,
+											1000).show();
+								}
+
+							} catch (JSONException e) {
+								// TODO Auto-generated catch block
+								e.printStackTrace();
+							}
+
+						}
+
+					});
+		}
+
+	
+	
 }

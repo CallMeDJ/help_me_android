@@ -68,15 +68,15 @@ public class WelcomeActivity extends BaseActivity {
 	protected void doOtherThing() {
 		// TODO Auto-generated method stub
 		super.doOtherThing();
-		AlphaAnimation anima = new AlphaAnimation(0.3f, 1.0f);
-		anima.setDuration(5000);// 设置动画显示时间
+		AlphaAnimation anima = new AlphaAnimation(0.5f, 1.0f);
+		anima.setDuration(3000);// 设置动画显示时间
 		// welcomeImg.startAnimation(anima);
 		// tv1.startAnimation(anima);
 		// tv2.startAnimation(anima);
 		anima.setAnimationListener(new AnimationImpl());
 
 		keywordsFlow = (KeywordsFlow) findViewById(R.id.fly_view);
-		keywordsFlow.setDuration(3000l);
+		keywordsFlow.setDuration(2000);
 		// 添加
 		feedKeywordsFlow(keywordsFlow, keywords);
 		keywordsFlow.go2Show(KeywordsFlow.ANIMATION_IN);// 开启动画
