@@ -115,14 +115,14 @@ public class ChatActivity extends BaseActivity{
 	protected void onCreate(Bundle bundle){
 		super.onCreate(bundle);
 		chatBoradcastReceiver = new ChatBoradcastReceiver();
-		registerReceiver(chatBoradcastReceiver, null);
+//		registerReceiver(chatBoradcastReceiver, null);
 		
 	}
 	@Override
 	protected void onDestroy(){
 		super.onDestroy();
 		StaticDatas.conversation = null;
-		unregisterReceiver(chatBoradcastReceiver);
+	//	unregisterReceiver(chatBoradcastReceiver);
 	}
 	
 	/**

@@ -6,6 +6,7 @@ import java.util.List;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
+import android.content.IntentFilter;
 import android.os.Bundle;
 
 import com.example.help.R;
@@ -39,7 +40,8 @@ public class ConversationListActivity extends BaseActivity implements IXListView
 	protected void onCreate(Bundle bundle){
 		super.onCreate(bundle);
 		conversationBoradcastReceiver = new ConversationBoradcastReceiver();
-		registerReceiver(conversationBoradcastReceiver, null);
+		IntentFilter filter = new IntentFilter();
+		registerReceiver(conversationBoradcastReceiver, filter);
 	}
 	
 	@Override
@@ -52,7 +54,7 @@ public class ConversationListActivity extends BaseActivity implements IXListView
 	protected void initView(){
 		super.initView();
 		setTitle("聊天");
-		
+		StaticDatas.initPhoto(this);
 		conversationList = StaticDatas.conversationList;
 		conversation_list = (XListView)findViewById(R.id.conversation_list);
 		conversation_list.setPullLoadEnable(false);

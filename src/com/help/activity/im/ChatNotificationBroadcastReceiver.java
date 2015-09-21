@@ -18,7 +18,7 @@ public class ChatNotificationBroadcastReceiver extends BroadcastReceiver{
 		//uncompleted notification..
 		nm = (NotificationManager)context.getSystemService(context.NOTIFICATION_SERVICE);
 		Notification notification = new Notification();
-		notification.setLatestEventInfo(context, "new chat", "chat", null);
+		//notification.setLatestEventInfo(context, "new chat", "chat", null);
 		nm.notify(CHAT_NOTIFICATION_ID, notification);
 	}
 
