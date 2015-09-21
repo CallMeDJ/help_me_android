@@ -7,8 +7,8 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="174dp"
-        android:background="@drawable/wallet_bg"
+        android:layout_height="wrap_content"
+        android:background="@drawable/default_wallte"
         android:orientation="vertical" >
 
         <RelativeLayout
@@ -20,11 +20,11 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
+                android:layout_marginLeft="10dp"
+                android:background="@drawable/back"
                 android:gravity="center"
                 android:onClick="onClick"
-                android:layout_marginLeft="10dp"
                 android:text=""
-                android:background="@drawable/back"
                 android:textColor="@color/white"
                 android:textSize="@dimen/sp_28px"
                 android:visibility="gone" />
@@ -70,7 +70,7 @@
             android:paddingTop="5dp"
             android:text="总收入"
             android:textColor="@color/white"
-            android:textSize="@dimen/sp_28px" />
+            android:textSize="@dimen/sp_32px" />
 
         <TextView
             android:layout_width="match_parent"
@@ -80,7 +80,7 @@
             android:paddingBottom="5dp"
             android:text="233.33"
             android:textColor="@color/white"
-            android:textSize="@dimen/sp_40px" />
+            android:textSize="@dimen/sp_44px" />
 
         <View
             android:layout_width="match_parent"
@@ -108,7 +108,7 @@
                     android:padding="5dp"
                     android:text="获得佣金"
                     android:textColor="@color/white"
-                    android:textSize="@dimen/sp_28px" />
+                    android:textSize="@dimen/sp_32px" />
 
                 <TextView
                     android:id="@+id/index_tv_keyong"
@@ -118,7 +118,7 @@
                     android:paddingBottom="5dp"
                     android:text="333.33"
                     android:textColor="@color/white"
-                    android:textSize="@dimen/sp_40px" />
+                    android:textSize="@dimen/sp_44px" />
             </LinearLayout>
 
             <View
@@ -140,7 +140,7 @@
                     android:padding="5dp"
                     android:text="支出佣金"
                     android:textColor="@color/white"
-                    android:textSize="@dimen/sp_28px" />
+                    android:textSize="@dimen/sp_32px" />
 
                 <TextView
                     android:id="@+id/index_tv_yizhuan"
@@ -150,7 +150,7 @@
                     android:paddingBottom="5dp"
                     android:text="100"
                     android:textColor="@color/white"
-                    android:textSize="@dimen/sp_40px" />
+                    android:textSize="@dimen/sp_44px" />
             </LinearLayout>
         </LinearLayout>
 
@@ -194,6 +194,12 @@
     <View
         android:layout_width="match_parent"
         android:layout_height="0.1dp"
+        android:background="@color/main_line_gray" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.1dp"
+        android:layout_marginTop="10dp"
         android:background="@color/main_line_gray" />
 
     <LinearLayout
