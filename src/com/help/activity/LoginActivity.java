@@ -64,7 +64,7 @@ public class LoginActivity extends BaseActivity implements OnClickListener {
 		// TODO Auto-generated method stub
 		super.initView();
 		setTitle("登录");
-		showBack();
+		//showBack();
 		showMenu();
 		setMenu("注册");
 

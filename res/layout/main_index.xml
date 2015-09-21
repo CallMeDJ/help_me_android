@@ -54,7 +54,8 @@
             android:layout_alignParentRight="true"
             android:layout_centerVertical="true"
             android:layout_marginLeft="10dp"
-            android:text="地图" >
+            android:text=""
+            android:background="@drawable/to_map" >
         </TextView>
     </RelativeLayout>
 

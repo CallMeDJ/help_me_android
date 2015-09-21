@@ -214,8 +214,8 @@ public class MapActivity extends Activity {
 								layout.setVisibility(View.VISIBLE);
 								tv1.setText(temp_obj.getMmasterPerson());
 								tv2.setText(temp_obj.getMtaskContext());
-								tv3.setText(temp_obj.getMaddress());
-								tv4.setText(temp_obj.getMlength());
+								tv3.setText(temp_obj.getMaddress()+"    "+temp_obj.getMlength());
+								//tv4.setText();
 								tv5.setText(temp_obj.getMtaskReward());
 								layout.setOnClickListener(new View.OnClickListener() {
 

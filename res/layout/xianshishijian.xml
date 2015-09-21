@@ -13,7 +13,7 @@
         android:layout_gravity="center"
         android:gravity="center"
         android:padding="10dp"
-        android:text="选择时间"
+        android:text="选择任务时间"
         android:textColor="@color/alltext"
         android:textSize="@dimen/sp_40px" />
 

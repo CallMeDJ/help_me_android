@@ -42,8 +42,8 @@ public class KeywordsFlow extends FrameLayout implements OnGlobalLayoutListener 
 	public static final int LOCATION_TO_CENTER = 4;
 	public static final long ANIM_DURATION = 800l;
 	public static final int MAX = 15;
-	public static final int TEXT_SIZE_MAX = 30;
-	public static final int TEXT_SIZE_MIN = 14;
+	public static final int TEXT_SIZE_MAX = 32;
+	public static final int TEXT_SIZE_MIN = 10;
 	private OnClickListener itemClickListener;
 	private static Interpolator interpolator;
 	private static AlphaAnimation animAlpha2Opaque;
@@ -75,6 +75,8 @@ public class KeywordsFlow extends FrameLayout implements OnGlobalLayoutListener 
 	/** 动画运行时间。 */
 	private long animDuration;
 
+	private int[] colors =  {0xFF9933,0xCC0099,0xFFFFFF,0xFFFF00,0x0000FF,0x00FF00,0x663366,0x66FFFF,0x336600,0xFF0000,};
+	
 	public KeywordsFlow(Context context, AttributeSet attrs, int defStyle) {
 		super(context, attrs, defStyle);
 		init();
@@ -205,7 +207,11 @@ public class KeywordsFlow extends FrameLayout implements OnGlobalLayoutListener 
 			for (int i = 0; i < size; i++) {
 				String keyword = vecKeywords.get(i);
 				// 随机颜色
-				int ranColor = 0xff000000 | random.nextInt(0x0077ffff);
+				//int ranColor = 0xff000000 | random.nextInt(0x0077ffff);
+				int ranColor = 0xff000000 |random.nextInt(0x00ffffff);
+				
+				//int ranColor = (int)(Math.random()*10);
+				
 				// 随机位置，糙值
 				int xy[] = randomXY(random, listX, listY, xItem);
 				// 随机字体大小

@@ -1,7 +1,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/main_background"
+    android:background="@drawable/login_bg"
     android:orientation="vertical" >
 
     <include
@@ -9,16 +9,24 @@
         android:layout_height="@dimen/dp_96px"
         layout="@layout/titlebar" />
 
-    <View
+    <TextView
         android:layout_width="match_parent"
-        android:layout_height="0.1dp"
-        android:layout_marginTop="20dp"
-        android:background="@color/main_line_gray" />
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="15dp"
+        android:gravity="center"
+        android:padding="15dp"
+        android:text="帮吗"
+        android:textColor="@color/main_blue"
+        android:textSize="50sp" />
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="15dp"
         android:background="@color/white"
         android:orientation="horizontal" >
 
@@ -43,15 +51,12 @@
             android:textSize="@dimen/sp_28px" />
     </LinearLayout>
 
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="0.1dp"
-        android:layout_marginLeft="15dp"
-        android:background="@color/main_line_gray" />
-
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="10dp"
         android:background="@color/white" >
 
         <ImageView
@@ -79,15 +84,12 @@
             android:textSize="@dimen/sp_28px" />
     </RelativeLayout>
 
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="0.1dp"
-        android:layout_marginLeft="15dp"
-        android:background="@color/main_line_gray" />
-
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="10dp"
         android:background="@color/white" >
 
         <ImageView
@@ -115,15 +117,12 @@
             android:textSize="@dimen/sp_28px" />
     </RelativeLayout>
 
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="0.1dp"
-        android:layout_marginLeft="15dp"
-        android:background="@color/main_line_gray" />
-
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="10dp"
         android:background="@color/white" >
 
         <ImageView
@@ -165,16 +164,14 @@
             android:textSize="@dimen/sp_28px" />
     </RelativeLayout>
 
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="0.1dp"
-        android:layout_marginLeft="15dp"
-        android:background="@color/main_line_gray" />
-
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/white" >
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="10dp"
+        android:background="@color/white"
+        android:visibility="gone" >
 
         <ImageView
             android:id="@+id/register_meiyong_iv4"
@@ -200,18 +197,13 @@
             android:textSize="@dimen/sp_28px" />
     </RelativeLayout>
 
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="0.1dp"
-        android:background="@color/main_line_gray" />
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:orientation="horizontal"
-        android:padding="15dp" 
-        android:visibility="gone">
+        android:padding="15dp"
+        android:visibility="gone" >
 
         <CheckBox
             android:id="@+id/register_cb"
@@ -223,16 +215,17 @@
             android:textColor="@color/main_text_black"
             android:textSize="@dimen/sp_24px" >
         </CheckBox>
-
     </LinearLayout>
 
     <Button
         android:id="@+id/register_register"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/zhuce"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
         android:layout_marginTop="20dp"
-        android:background="@drawable/button"
+        android:background="@color/main_blue"
+        android:text="@string/zhuce"
         android:textColor="@color/btn_text_color_black"
         android:textSize="@dimen/sp_36px" />
 
