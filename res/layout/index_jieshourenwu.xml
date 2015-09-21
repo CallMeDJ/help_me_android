@@ -18,7 +18,7 @@
         android:padding="10dp"
         android:text="50:05"
         android:textColor="@color/red"
-        android:textSize="@dimen/sp_48px" />
+        android:textSize="32sp" />
 
     <LinearLayout
         android:id="@+id/showweizhi"
@@ -32,14 +32,14 @@
             android:id="@+id/mine_meiyong_imageview00"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:paddingBottom="10dp"
+            android:paddingBottom="5dp"
             android:src="@drawable/add1" />
 
         <TextView
             android:id="@+id/jieshou_tv2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:paddingBottom="10dp"
+            android:paddingBottom="5dp"
             android:paddingLeft="5dp"
             android:text="平安大厦"
             android:textColor="@color/alltext"
@@ -63,8 +63,8 @@
 
         <ImageView
             android:id="@+id/mine_meiyong_imageview0"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
             android:layout_gravity="center"
             android:padding="10dp"
             android:src="@drawable/mine_head" />
@@ -86,7 +86,7 @@
                 android:padding="5dp"
                 android:text="小猪 | 男"
                 android:textColor="@color/alltext"
-                android:textSize="@dimen/sp_24px" />
+                android:textSize="@dimen/sp_36px" />
 
             <TextView
                 android:id="@+id/jieshou_tv4"
@@ -95,17 +95,16 @@
                 android:padding="5dp"
                 android:text="18576767676"
                 android:textColor="@color/red"
-                android:textSize="@dimen/sp_32px" />
+                android:textSize="@dimen/sp_40px" />
         </LinearLayout>
     </LinearLayout>
 
      <Button
             android:id="@+id/jieshou_info"
-            android:layout_width="match_parent"
+            android:layout_width="100dp"
             android:layout_height="wrap_content"
             android:layout_marginBottom="10dp"
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp"
+            android:layout_gravity="center_horizontal"
             android:layout_marginTop="10dp"
             android:background="@color/main_blue"
             android:gravity="center"
@@ -116,8 +115,7 @@
       <View
         android:layout_width="match_parent"
         android:layout_height="0.1dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginBottom="10dp"
+        android:layout_marginTop="10dp"
         android:background="@color/main_line_gray" />
     
     <LinearLayout

@@ -68,6 +68,7 @@ public class MoreActivity extends BaseActivity implements OnClickListener {
 
 		exit = (Button) findViewById(R.id.pbtn);
 
+		phone.setText(Tool.readData(this, "user", "phone"));
 	}
 
 	@Override

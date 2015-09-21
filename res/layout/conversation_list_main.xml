@@ -30,6 +30,7 @@
 	    android:layout_height="wrap_content"
         android:layout_marginTop="6dp"
 	    android:id="@+id/conversation_list"
+	    android:divider="@null"
         android:layout_below="@+id/conversation_tips">
     </com.help.listview.XListView>
 

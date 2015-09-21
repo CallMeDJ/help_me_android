@@ -289,10 +289,12 @@ public class TaskActivity extends BaseActivity implements
 
 			curPage = 1;
 			// loadHttp("0");
+			onStopLoad();
 		} else if (rb2.isChecked()) {
 
 			curPage = 1;
 			// loadHttp("1");
+			onStopLoad();
 		}
 	}
 

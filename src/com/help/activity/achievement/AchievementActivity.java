@@ -102,8 +102,8 @@ public class AchievementActivity extends BaseActivity{
 			@Override
 			public void onClick(View v) {
 				Intent intent = new Intent();
-				intent = new Intent(context, AchievementRouteMapActivity.class);
-				context.startActivity(intent);
+				intent = new Intent(AchievementActivity.this, AchievementRouteMapActivity.class);
+				startActivity(intent);
 			}
 		});
 

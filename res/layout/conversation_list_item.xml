@@ -1,60 +1,61 @@
 <?xml version="1.0" encoding="utf-8"?>
-
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-              android:padding="0dp"
-              android:layout_margin="0dp"
-     >
-<RelativeLayout 
     android:layout_width="match_parent"
-    android:layout_height="55dp"
-    android:paddingRight="6dp"
-    android:layout_marginTop="6dp"
-    android:layout_marginBottom="6dp">
-    <ImageView
-        android:id="@+id/conversation_user_icon"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/icon_wenzhuanbao"/>
+    android:layout_height="match_parent"
+    android:layout_margin="0dp"
+    android:orientation="vertical"
+    android:paddingRight="5dp" 
+    android:paddingTop="5dp" 
+    android:paddingBottom="5dp" >
 
     <RelativeLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-		android:layout_toRightOf="@id/conversation_user_icon"
-            >
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:layout_marginBottom="6dp"
+        android:layout_marginTop="6dp"
+        android:paddingRight="6dp" >
+
+        <ImageView
+            android:id="@+id/conversation_user_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/icon_wenzhuanbao" />
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/conversation_user_icon" >
+
+            <TextView
+                android:id="@+id/conversation_user_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:text="Star"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/conversation_content"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_marginTop="4dp"
+                android:text="[帮吗红包]"
+                android:textColor="@color/deep_gray" />
+        </RelativeLayout>
 
         <TextView
-            android:id="@+id/conversation_user_name"
+            android:id="@+id/conversation_time"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Star"
-            android:textStyle="bold"
-                android:layout_alignParentTop="true"/>
-        <TextView
-            android:id="@+id/conversation_content"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="[帮吗红包]"
-            android:layout_marginTop="4dp"
-            android:textColor="@color/deep_gray"
-                android:layout_alignParentBottom="true"/>
+            android:layout_alignParentRight="true"
+            android:text="星期五"
+            android:textColor="@color/deep_gray" />
     </RelativeLayout>
 
     <TextView
-        android:id="@+id/conversation_time"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentRight="true"
-        android:text="星期五"
-        android:textColor="@color/deep_gray" />
+        android:layout_width="match_parent"
+        android:layout_height="0.1dp"
+        android:background="@color/gray" />
 
-</RelativeLayout>
-
-
-<TextView 
-    android:layout_width="match_parent"
-    android:layout_height="1dp"
-    android:background="@color/gray"/>
 </LinearLayout>

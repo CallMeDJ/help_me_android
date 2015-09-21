@@ -8,13 +8,13 @@
         android:minSdkVersion="14"
         android:targetSdkVersion="18" />
 
-    
     <supports-screens
         android:anyDensity="true"
         android:largeScreens="true"
         android:normalScreens="false"
         android:resizeable="true"
         android:smallScreens="true" />
+
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
     <uses-permission android:name="android.permission.BROADCAST_STICKY" />
@@ -35,8 +35,10 @@
     <uses-permission android:name="android.permission.WRITE_CONTACTS" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+
     <uses-feature android:name="android.hardware.camera" />
     <uses-feature android:name="android.hardware.camera.autofocus" />
+
     <uses-permission android:name="android.permission.FLASHLIGHT" />
     <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
     <uses-permission android:name="android.permission.READ_LOGS" />
@@ -60,7 +62,9 @@
     <uses-permission android:name="android.permission.ACCESS_LOCATION" />
     <uses-permission android:name="android.permission.DOWNLOAD_WITHOUT_NOTIFICATION" />
     <uses-permission android:name="android.permission.INTERACT_ACROSS_USERS_FULL" />
+
     <application
+        android:name="com.help.activity.MyApplication"
         android:allowBackup="true"
         android:icon="@drawable/app_icon"
         android:label="@string/app_name"
@@ -89,27 +93,22 @@
             android:theme="@style/AppTheme"
             android:windowSoftInputMode="stateAlwaysHidden" >
         </activity>
-
-
         <activity
-            android:name="com.help.activity.index.AchievementRouteMapActivity"
+            android:name="com.help.activity.index."
             android:label="@string/app_name"
             android:launchMode="singleTask"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme"
             android:windowSoftInputMode="stateAlwaysHidden" >
         </activity>
-
-
-         <activity
-        android:name="com.help.activity.im.ConversationListActivity"
-        android:label="@string/app_name"
-        android:launchMode="singleTask"
-        android:screenOrientation="portrait"
-        android:theme="@style/AppTheme"
-        android:windowSoftInputMode="stateAlwaysHidden" >
+        <activity
+            android:name="com.help.activity.im.ConversationListActivity"
+            android:label="@string/app_name"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme"
+            android:windowSoftInputMode="stateAlwaysHidden" >
         </activity>
-
         <activity
             android:name="com.help.activity.im.ChatActivity"
             android:label="@string/app_name"
@@ -118,8 +117,6 @@
             android:theme="@style/AppTheme"
             android:windowSoftInputMode="stateAlwaysHidden" >
         </activity>
-
-
         <activity
             android:name="com.help.activity.LoginActivity"
             android:label="@string/app_name"
@@ -180,6 +177,13 @@
         <!-- 首页 -->
         <activity
             android:name="com.help.activity.index.IndexActivity"
+            android:label="@string/bottom_bar_index"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme"
+            android:windowSoftInputMode="stateAlwaysHidden" >
+        </activity>
+        <activity
+            android:name="com.help.activity.index.AchievementRouteMapActivity"
             android:label="@string/bottom_bar_index"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme"
@@ -305,17 +309,14 @@
                 <action android:name="com.lql.service.ServiceDemo" />
             </intent-filter>
         </service>
-        
-        
+
         <!-- 聊天的相关广播 -->
-        
-        <receiver android:name="com.help.activity.im.ChatNotificationBroadcastReceiver">
+
+        <receiver android:name="com.help.activity.im.ChatNotificationBroadcastReceiver" >
             <intent-filter>
-                <action android:name="com.help.newChatComeNotification"/>
+                <action android:name="com.help.newChatComeNotification" />
             </intent-filter>
-            
         </receiver>
     </application>
-
 
 </manifest>

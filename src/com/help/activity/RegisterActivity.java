@@ -53,6 +53,8 @@ public class RegisterActivity extends BaseActivity implements OnClickListener{
 	private UserMode allUser = null;
 
 	private Dialog juhua = null;
+
+	private TextView reback = null;
 	
 	
 	@Override
@@ -78,6 +80,7 @@ public class RegisterActivity extends BaseActivity implements OnClickListener{
 		huoqu = (Button) findViewById(R.id.register_tv_huoqu);
 		cb_tongyi = (CheckBox) findViewById(R.id.register_cb);
 		register = (Button) findViewById(R.id.register_register);
+		reback = (TextView) findViewById(R.id.login_zhuce_back);
 
 
 	}
@@ -89,14 +92,14 @@ public class RegisterActivity extends BaseActivity implements OnClickListener{
 		titleBarBack.setOnClickListener(this);
 		huoqu.setOnClickListener(this);
 		register.setOnClickListener(this);
-		
+		reback.setOnClickListener(this);
 	}
 
 	@Override
 	public void onClick(View arg0) {
 		// TODO Auto-generated method stub
 		switch (arg0.getId()) {
-		case R.id.title_bar_back:
+		case R.id.login_zhuce_back:
 			RegisterActivity.this.finish();
 			anim_right_out();
 			break;
@@ -238,6 +241,7 @@ public class RegisterActivity extends BaseActivity implements OnClickListener{
 								startActivity(intent3);
 								Tool.writeData(RegisterActivity.this, "user", "login", "ok");
 								Tool.writeData(RegisterActivity.this, "user", "userId", data.getString("user_id"));
+								Tool.writeData(RegisterActivity.this, "user", "phone", et_phone.getText().toString());
 								finish();
 								anim_right_in();
 							} else if ("false".equals(status)) {

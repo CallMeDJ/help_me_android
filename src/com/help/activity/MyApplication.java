@@ -24,6 +24,7 @@ public class MyApplication extends Application {
 	@Override
 	public void onCreate() {
 		super.onCreate();
+		SDKInitializer.initialize(getApplicationContext());
 		StaticDatas.context = this;
 		Intent ChatServiceIntent = new Intent(this,ChatService.class);
 		startService(ChatServiceIntent);

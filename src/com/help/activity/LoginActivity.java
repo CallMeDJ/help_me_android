@@ -35,6 +35,7 @@ public class LoginActivity extends BaseActivity implements OnClickListener {
 	private EditText et_pass = null;
 	// 忘记密码
 	private TextView tv_wang = null;
+	private TextView tv_zhuce = null;
 
 	// usermode
 	private UserMode allUser = null;
@@ -74,6 +75,7 @@ public class LoginActivity extends BaseActivity implements OnClickListener {
 		et_name = (EditText) findViewById(R.id.login_et_name);
 		et_pass = (EditText) findViewById(R.id.login_et_pass);
 		tv_wang = (TextView) findViewById(R.id.login_wangjimima);
+		tv_zhuce = (TextView) findViewById(R.id.login_zhuce);
 
 	}
 
@@ -85,6 +87,7 @@ public class LoginActivity extends BaseActivity implements OnClickListener {
 		titleBarMenu.setOnClickListener(this);
 		login.setOnClickListener(this);
 		tv_wang.setOnClickListener(this);
+		tv_zhuce.setOnClickListener(this);
 
 	}
 
@@ -126,6 +129,11 @@ public class LoginActivity extends BaseActivity implements OnClickListener {
 			// 忘记密码
 			startActivity(new Intent(LoginActivity.this,
 					ZhaoHuiMiMaActivity.class));
+			anim_right_in();
+			break;
+		case R.id.login_zhuce:
+			// 忘记密码
+			startActivity(new Intent(LoginActivity.this, RegisterActivity.class));
 			anim_right_in();
 			break;
 		default:
@@ -204,6 +212,7 @@ public class LoginActivity extends BaseActivity implements OnClickListener {
 								startActivity(intent3);
 								Tool.writeData(LoginActivity.this, "user", "login", "ok");
 								Tool.writeData(LoginActivity.this, "user", "userId", data.getString("user_id"));
+								Tool.writeData(LoginActivity.this, "user", "phone", et_name.getText().toString());
 								finish();
 								anim_right_in();
 							} else if ("false".equals(status)) {

@@ -1,5 +1,6 @@
 package com.help.activity.im;
 
+import java.util.Date;
 import java.util.List;
 
 
@@ -8,6 +9,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.os.Bundle;
+import android.view.KeyEvent;
 
 import com.example.help.R;
 import com.help.activity.StaticDatas;
@@ -58,6 +60,8 @@ public class ConversationListActivity extends BaseActivity implements IXListView
 		conversationList = StaticDatas.conversationList;
 		conversation_list = (XListView)findViewById(R.id.conversation_list);
 		conversation_list.setPullLoadEnable(false);
+		conversation_list.setPullRefreshEnable(true);
+		conversation_list.setXListViewListener(this);
 	    conversationListAdapter = new ConversationListAdapter(this,conversationList);
 		conversation_list.setAdapter(conversationListAdapter);
 		conversation_list.deferNotifyDataSetChanged();
@@ -84,11 +88,18 @@ public class ConversationListActivity extends BaseActivity implements IXListView
 	@Override
 	public void onRefresh() {
 		ChatManager.refleshChat(this);
+		onStopLoad();
 	}
 
 	@Override
 	public void onLoadMore() {
-		// TODO Auto-generated method stub
+		onStopLoad();
+	}
+	
+	private void onStopLoad() {
+		conversation_list.stopRefresh();
+		conversation_list.stopLoadMore();
+		conversation_list.setRefreshTime(new Date().toLocaleString());
 	}
 	
 	/**
@@ -105,6 +116,19 @@ public class ConversationListActivity extends BaseActivity implements IXListView
 		}	
 	}
 
+	@Override
+	public boolean onKeyDown(int keyCode, KeyEvent event) {
+		// if (!needBack) {
+		// return super.onKeyDown(keyCode, event);
+		// }
+		// 先判断是否是返回键
+		if (keyCode == KeyEvent.KEYCODE_BACK && event.getRepeatCount() == 0) {
+			return false;
+		}
+		return false;
+	}
+
+	
 }
 
 
