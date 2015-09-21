@@ -162,7 +162,7 @@
                 android:layout_gravity="left"
                 android:text="已完成任务"
                 android:paddingTop="14dp"
-                android:paddingBottom="14dp"
+               android:paddingBottom="14dp"
                 android:textAppearance="?android:attr/textAppearanceSmall"
                 android:textColor="@color/bg_blue" />
 

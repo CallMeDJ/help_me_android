@@ -76,10 +76,10 @@ public class StaticDatas {
 		Bitmap meinv_icon_3 = BitmapFactory.decodeResource(context.getResources(), R.drawable.meinv3);
 		Bitmap meinv_icon_4 = BitmapFactory.decodeResource(context.getResources(), R.drawable.meinv4);
 
-		Conversation meinv1 = new Conversation(meinv_icon_1, "柏拉图式","1","[微信红包]", "剩余23小时");
-		Conversation meinv2 = new Conversation(meinv_icon_2, "向秋","2","[微信红包]", "剩余20小时");
-		Conversation meinv3 = new Conversation(meinv_icon_3, "凡白","3","[微信红包]", "剩余8小时");
-		Conversation meinv4 = new Conversation(meinv_icon_4, "从蕾","4", "[微信红包]", "剩余6小时");
+		Conversation meinv1 = new Conversation(meinv_icon_1, "柏拉图式","1","你在哪里啊", "剩余23小时");
+		Conversation meinv2 = new Conversation(meinv_icon_2, "向秋","2","都说了不是那里咯", "剩余20小时");
+		Conversation meinv3 = new Conversation(meinv_icon_3, "凡白","3","不行不行不够不够", "剩余8小时");
+		Conversation meinv4 = new Conversation(meinv_icon_4, "从蕾","4", "不要", "剩余6小时");
 		conversationList.add(meinv1);
 		conversationList.add(meinv2);
 		conversationList.add(meinv3);

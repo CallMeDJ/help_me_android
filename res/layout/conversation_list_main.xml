@@ -19,7 +19,7 @@
         android:paddingLeft="20dp"
         android:paddingRight="20dp"
         android:textSize="10sp"
-        android:text="聊天只保留24小时"
+        android:text="温馨提示：超过24小时不理TA就会失去TA哦~"
         android:layout_below="@id/message_title_bar"
         android:gravity="center_horizontal"
         android:layout_centerHorizontal="true"

@@ -69,6 +69,9 @@ public class TaskActivity extends BaseActivity implements
 		// TODO Auto-generated method stub
 		super.initView();
 		setTitle("我的任务");
+		showBack();
+
+
 		juhua = new ProcessDialogUtil(TaskActivity.this);
 
 		rg = (RadioGroup) findViewById(R.id.tingchezhong_rg);

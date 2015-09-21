@@ -29,11 +29,14 @@ public class ChatActivity extends BaseActivity{
     private ListView chat_list;
     private  ChatAdapter chatAdapter;
     public ChatBoradcastReceiver chatBoradcastReceiver;
+
     
     @Override
     protected int layoutId() {
         return R.layout.chat_main;
     }
+
+
 
     @Override
     protected void initView() {
@@ -43,6 +46,15 @@ public class ChatActivity extends BaseActivity{
         
         
         setTitle(conversation.user_name);
+		showBack();
+
+		titleBarBack.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				ChatActivity.this.finish();
+			}
+		});
+
         chat_list = (ListView)findViewById(R.id.chat_list);
 
 

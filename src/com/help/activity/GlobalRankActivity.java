@@ -1,5 +1,7 @@
 package com.help.activity;
 
+import android.view.View;
+
 import java.util.List;
 
 import com.example.help.R;
@@ -21,6 +23,14 @@ public class GlobalRankActivity extends BaseActivity{
 		// TODO Auto-generated method stub
 		super.initView();
 		setTitle("排行榜");
+		showBack();
+		titleBarBack.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				GlobalRankActivity.this.finish();
+			}
+		});
+
 		listView = (XListView) findViewById(R.id.global_rank);
 		GlobalRankListAdapter adapter = new GlobalRankListAdapter(this);
 		adapter.setDataList(StaticDatas.globalRankList);

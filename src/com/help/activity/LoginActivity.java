@@ -196,7 +196,7 @@ public class LoginActivity extends BaseActivity implements OnClickListener {
 							JSONObject data = new JSONObject(datastr);
 							if ("true".equals(status)) {
 								Toast.makeText(LoginActivity.this, "登录成功",
-										1000).show();
+										Toast.LENGTH_SHORT).show();
 								Intent intent3 = new Intent(LoginActivity.this,
 										MainActivity.class);
 								StaticVariable.put(StaticVariable.sv_toIndex,
@@ -209,7 +209,7 @@ public class LoginActivity extends BaseActivity implements OnClickListener {
 							} else if ("false".equals(status)) {
 								String errinfo = json.getString("info");
 								Toast.makeText(LoginActivity.this, errinfo,
-										1000).show();
+										Toast.LENGTH_SHORT).show();
 							}
 
 						} catch (JSONException e) {
@@ -223,7 +223,7 @@ public class LoginActivity extends BaseActivity implements OnClickListener {
 						// TODO Auto-generated method stub
 						super.onFailure(error, content);
 						jindu.dismiss();
-						Toast.makeText(LoginActivity.this, content, 1000)
+						Toast.makeText(LoginActivity.this, content, Toast.LENGTH_SHORT)
 								.show();
 					}
 
