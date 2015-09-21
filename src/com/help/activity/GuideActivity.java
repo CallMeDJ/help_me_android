@@ -30,13 +30,13 @@ public class GuideActivity extends BaseActivity implements OnClickListener {
 			R.drawable.welcome_2, R.drawable.welcome_3 };
 
 	// 引导页的标题
-	private static final int[] titleRes = new int[] { R.string.sanbiaotouzi,
-			R.string.wenzhuanbao, R.string.zhaiquanzhuanrang, };
+	private static final int[] titleRes = new int[] { R.string.action_settings,
+			R.string.action_settings, R.string.action_settings, };
 
 	// 引导页的内容
 	private static final int[] subtitleRes = new int[] {
-			R.string.sanbiaotouzijieshi, R.string.wenzhuanbaojieshi,
-			R.string.zhaiquanzhuanrangjieshi };
+			R.string.action_settings, R.string.action_settings,
+			R.string.action_settings };
 
 	private ImageView[] dotImage;
 

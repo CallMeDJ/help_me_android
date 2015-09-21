@@ -48,11 +48,10 @@
     </LinearLayout>
 
     <View
-        android:layout_width="match_parent"
+        android:layout_width="200dp"
         android:layout_height="0.1dp"
-        android:layout_marginLeft="80dp"
-        android:layout_marginRight="80dp"
         android:layout_marginTop="5dp"
+        android:layout_gravity="center"
         android:background="@color/main_line_gray" />
 
     <LinearLayout
@@ -100,13 +99,26 @@
         </LinearLayout>
     </LinearLayout>
 
+     <Button
+            android:id="@+id/jieshou_info"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="10dp"
+            android:background="@color/main_blue"
+            android:gravity="center"
+            android:text="发送消息"
+            android:textColor="@color/white"
+            android:textSize="@dimen/sp_28px" />
+    
       <View
         android:layout_width="match_parent"
         android:layout_height="0.1dp"
         android:layout_marginTop="20dp"
         android:layout_marginBottom="10dp"
         android:background="@color/main_line_gray" />
-    
     
     <LinearLayout
         android:id="@+id/dialog_layout2"

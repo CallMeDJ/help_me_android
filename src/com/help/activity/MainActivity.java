@@ -11,6 +11,7 @@ import java.util.TimerTask;
 import android.app.Activity;
 import android.app.ActivityGroup;
 import android.app.LocalActivityManager;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.KeyEvent;
@@ -28,6 +29,11 @@ import com.help.activity.achievement.AchievementActivity;
 import com.help.activity.edit.EditActivity;
 import com.help.activity.im.ConversationListActivity;
 import com.help.activity.index.IndexActivity;
+<<<<<<< HEAD
+=======
+import com.help.activity.index.ServiceDemo;
+import com.help.activity.mine.MineActivity;
+>>>>>>> f5dedd1b44cc18fab8dcc9e1bf20e6943e77ffd3
 import com.help.activity.more.MoreActivity;
 import com.help.base.AppManager;
 import com.help.base.BaseActivity;
@@ -47,6 +53,8 @@ public class MainActivity extends ActivityGroup implements OnClickListener {
 	// 读取登录状态 ，loginState = login.
 	private Boolean loginState = false;
 
+	private Intent iservice;
+	
 	@SuppressWarnings("deprecation")
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -57,6 +65,11 @@ public class MainActivity extends ActivityGroup implements OnClickListener {
 		initView();
 		initViewListener();
 		doOtherThing();
+		
+		//bindService(new Intent(ServiceDemo.ACTION),conn,Context.BIND_AUTO_CREATE);  
+		iservice = new Intent(ServiceDemo.ACTION);
+		startService(iservice);
+		//Toast.makeText(MainActivity.this, "service on", 1000).show();
 	}
 
 	private void initView() {
@@ -121,7 +134,7 @@ public class MainActivity extends ActivityGroup implements OnClickListener {
 				destroy(activityName);
 				container.removeView(lytMap.get(activityName));
 				lytMap.remove(activityName);
-			} else {
+			} else { 
 				BaseActivity bA = (BaseActivity) localActivityManager
 						.getActivity(activityName);
 				// bA.refresh(b);
@@ -168,7 +181,7 @@ public class MainActivity extends ActivityGroup implements OnClickListener {
 	public void onClick(View v) {
 		switch (v.getId()) {
 		case R.id.rbIndex:
-			setContainerView("index", IndexActivity.class, null, false);
+			setContainerView("index", IndexActivity.class, null, true);
 			rbIndex.setChecked(true);
 			BackKeyCount = 0;
 			break;
@@ -277,7 +290,7 @@ public class MainActivity extends ActivityGroup implements OnClickListener {
 		String toMine = StaticVariable.get(StaticVariable.sv_toMine);
 		String toMore = StaticVariable.get(StaticVariable.sv_toMore);
 		if (toIndex.equals("1")) {
-			toTab(R.id.rbIndex, null, false);
+			toTab(R.id.rbIndex, null, true);
 		}
 		if (toTask.equals("2")) {
 			toTab(R.id.rbTask, null, false);
@@ -309,6 +322,8 @@ public class MainActivity extends ActivityGroup implements OnClickListener {
 			BackKeyCount++;
 			if (BackKeyCount >= 2) {
 				isOnKeyDown = false;
+				stopService(iservice);
+				//Toast.makeText(MainActivity.this, "service offffffffff", 1000).show();
 				AppManager.getAppManager().appExit(this);
 				finish();
 

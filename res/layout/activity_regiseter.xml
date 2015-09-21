@@ -224,13 +224,6 @@
             android:textSize="@dimen/sp_24px" >
         </CheckBox>
 
-        <TextView
-            android:id="@+id/register_xieyi"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/quqianzhucexieyi"
-            android:textColor="@color/main_blue"
-            android:textSize="@dimen/sp_24px" />
     </LinearLayout>
 
     <Button

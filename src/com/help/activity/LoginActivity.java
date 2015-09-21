@@ -136,11 +136,8 @@ public class LoginActivity extends BaseActivity implements OnClickListener {
 
 	// 修改登录状态
 	private void reviseLoginState() {
-		// CommonUtil.addConfigInfo(LoginActivity.this, "loginState", "login",
-		// "",
-		// "");
 		// 将当前用户保存到文件中
-		Tool.writeData(LoginActivity.this, "loginState", "zhanghu", "ok");
+		
 	}
 
 	// 返回键事件
@@ -166,8 +163,8 @@ public class LoginActivity extends BaseActivity implements OnClickListener {
 
 	private void loadHttp() {
 		RequestParams params = new RequestParams();
-		//params.put("userPhone", et_name.getText().toString());
-		//params.put("userPassword", et_pass.getText().toString());
+		params.put("userPhone", et_name.getText().toString());
+		params.put("userPassword", et_pass.getText().toString());
 
 		ESalesHttpClient.requestGet(this, CommonAPI.API_LOGIN, params,
 				new AsyncHttpResponseHandler() {
@@ -195,6 +192,8 @@ public class LoginActivity extends BaseActivity implements OnClickListener {
 						try {
 							JSONObject json = new JSONObject(content);
 							String status = json.getString("status");
+							String datastr = json.getString("data");
+							JSONObject data = new JSONObject(datastr);
 							if ("true".equals(status)) {
 								Toast.makeText(LoginActivity.this, "登录成功",
 										1000).show();
@@ -203,9 +202,10 @@ public class LoginActivity extends BaseActivity implements OnClickListener {
 								StaticVariable.put(StaticVariable.sv_toIndex,
 										"1");
 								startActivity(intent3);
-								anim_right_in();
-								reviseLoginState();
+								Tool.writeData(LoginActivity.this, "user", "login", "ok");
+								Tool.writeData(LoginActivity.this, "user", "userId", data.getString("user_id"));
 								finish();
+								anim_right_in();
 							} else if ("false".equals(status)) {
 								String errinfo = json.getString("info");
 								Toast.makeText(LoginActivity.this, errinfo,

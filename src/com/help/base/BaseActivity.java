@@ -8,6 +8,7 @@ import android.view.KeyEvent;
 import android.view.Window;
 import android.widget.TextView;
 
+import com.baidu.mapapi.SDKInitializer;
 import com.example.help.R;
 
 public abstract class BaseActivity extends FragmentActivity{
@@ -22,6 +23,7 @@ public abstract class BaseActivity extends FragmentActivity{
 	protected void onCreate(Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
 		super.onCreate(savedInstanceState);
+		
 		context = this;
 		requestWindowFeature(Window.FEATURE_NO_TITLE);
 		AppManager.getAppManager().addActivity(this);
