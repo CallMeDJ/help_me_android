@@ -28,8 +28,9 @@
 	<com.help.listview.XListView 
 	    android:layout_width="match_parent"
 	    android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="6dp"
 	    android:id="@+id/conversation_list"
-            android:layout_below="@+id/conversation_tips"></com.help.listview.XListView>
+        android:layout_below="@+id/conversation_tips">
+    </com.help.listview.XListView>
 
 </RelativeLayout>

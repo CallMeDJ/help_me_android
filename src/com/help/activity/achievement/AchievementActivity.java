@@ -6,6 +6,7 @@ import java.util.Map;
 import android.content.Context;
 import android.content.Intent;
 import android.view.View;
+import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
@@ -13,6 +14,7 @@ import com.example.help.R;
 import com.help.activity.GlobalRankActivity;
 import com.help.activity.PositionActivity;
 import com.help.activity.StaticDatas;
+import com.help.activity.index.AchievementRouteMapActivity;
 import com.help.base.BaseActivity;
 import com.help.util.expLiner;
 
@@ -26,7 +28,7 @@ public class AchievementActivity extends BaseActivity{
 	private TextView achievement_completed_mission;
 	private TextView achievement_agree_count;
 	private TextView achievement_money_count;
-	private TextView achievement_my_route;
+	private LinearLayout achievement_my_route;
 	private Context context;
 	@Override
 	protected int layoutId() {
@@ -78,7 +80,18 @@ public class AchievementActivity extends BaseActivity{
 		achievement_completed_mission = (TextView) findViewById(R.id.achievement_completed_mission);
 		achievement_agree_count = (TextView) findViewById(R.id.achievement_agree_count);
 		achievement_money_count = (TextView) findViewById(R.id.achievement_money_count);
-		achievement_my_route = (TextView)findViewById(R.id.achievement_my_route);
+		achievement_my_route = (LinearLayout)findViewById(R.id.achievement_my_route);
+
+
+		achievement_my_route.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				Intent intent = new Intent();
+				intent = new Intent(context, AchievementRouteMapActivity.class);
+				context.startActivity(intent);
+			}
+		});
+
 		context = this;
 
 
