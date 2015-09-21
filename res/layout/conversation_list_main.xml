@@ -9,10 +9,27 @@
         layout="@layout/titlebar"
         android:layout_alignParentTop="true"
         android:id="@+id/message_title_bar"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="6dp"
+        android:id="@+id/conversation_tips"
+        android:paddingTop="3dp"
+        android:paddingBottom="3dp"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:textSize="10sp"
+        android:text="聊天只保留24小时"
+        android:layout_below="@id/message_title_bar"
+        android:gravity="center_horizontal"
+        android:layout_centerHorizontal="true"
+        android:background="@color/gray"/>
+    
 	<com.help.listview.XListView 
 	    android:layout_width="match_parent"
 	    android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
 	    android:id="@+id/conversation_list"
-            android:layout_below="@+id/message_title_bar"></com.help.listview.XListView>
+            android:layout_below="@+id/conversation_tips"></com.help.listview.XListView>
 
 </RelativeLayout>

@@ -51,6 +51,7 @@ public long getItemId(int position) {
 @Override
 public View getView(final int position, View view, ViewGroup parentView) {
 	View conversation_item = LayoutInflater.from(context).inflate(R.layout.conversation_list_item, null);
+
 	Conversation conversation = getItem(position);
 	ImageView icon = (ImageView) conversation_item.findViewById(R.id.conversation_user_icon);
 	TextView user_name = (TextView)conversation_item.findViewById(R.id.conversation_user_name);

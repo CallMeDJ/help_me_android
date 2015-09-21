@@ -44,6 +44,8 @@ public class ChatActivity extends BaseActivity{
         
         setTitle(conversation.user_name);
         chat_list = (ListView)findViewById(R.id.chat_list);
+
+
         chatAdapter = new ChatAdapter();
         chat_list.setAdapter(chatAdapter);
         chatAdapter.notifyDataSetChanged();
@@ -66,7 +68,7 @@ public class ChatActivity extends BaseActivity{
 		@Override
 		public Chat getItem(int position) {
 			// TODO Auto-generated method stub
-			return chatList.get(size - position);
+			return chatList.get(position);
 		}
 
 		@Override
@@ -88,8 +90,7 @@ public class ChatActivity extends BaseActivity{
 			TextView timeView = null;
 			TextView content = null;
 			ImageView user_icon = null;
-			for(Chat loopChat : chatList){
-				if(loopChat.is_received){
+				if(chat.is_received){
 					messageView = LayoutInflater.from(ChatActivity.this).inflate(R.layout.message_receiver_left, null);
 					timeView = (TextView)messageView.findViewById(R.id.message_time_left);
 					content = (TextView)messageView.findViewById(R.id.message_content_left);
@@ -105,8 +106,6 @@ public class ChatActivity extends BaseActivity{
 				timeView.setText(chat.getChat_date());
 				content.setText(chat.getContent());
 				user_icon.setImageBitmap(conversation.icon);
-				
-			}
 			return messageView;
 		}
 		

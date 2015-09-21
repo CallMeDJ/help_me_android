@@ -29,11 +29,9 @@ import com.help.activity.achievement.AchievementActivity;
 import com.help.activity.edit.EditActivity;
 import com.help.activity.im.ConversationListActivity;
 import com.help.activity.index.IndexActivity;
-<<<<<<< HEAD
-=======
+
 import com.help.activity.index.ServiceDemo;
 import com.help.activity.mine.MineActivity;
->>>>>>> f5dedd1b44cc18fab8dcc9e1bf20e6943e77ffd3
 import com.help.activity.more.MoreActivity;
 import com.help.base.AppManager;
 import com.help.base.BaseActivity;

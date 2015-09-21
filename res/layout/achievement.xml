@@ -158,24 +158,44 @@
             android:layout_height="wrap_content"
             android:layout_gravity="left"
             android:text="已完成任务"
+            android:paddingTop="14dp"
+            android:paddingBottom="14dp"
             android:textAppearance="?android:attr/textAppearanceSmall"
             android:textColor="@color/bg_blue" />
 
-        <TextView
-            android:id="@+id/achievement_completed_mission"
+        <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="right"
-            android:text="23"
-            android:textAppearance="?android:attr/textAppearanceSmall"
-            android:textColor="@color/main_gray" />
+            android:layout_gravity="right">
+
+            <TextView
+                android:id="@+id/achievement_completed_mission"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                android:text="23"
+                android:paddingTop="14dp"
+                android:paddingBottom="14dp"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:textColor="@color/main_gray" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/celljiantou"
+                android:layout_gravity="center_vertical"/>
+
+        </LinearLayout>
+
+
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="1sp"
             android:layout_columnSpan="2"
             android:layout_marginTop="3dp"
-            android:background="@color/main_gray" />
+
+            android:background="@color/gray" />
 
         <TextView
             android:id="@+id/TextView02"
@@ -184,25 +204,45 @@
             android:layout_gravity="left"
             android:layout_marginTop="3dp"
             android:text="好评数"
+            android:paddingTop="14dp"
+            android:paddingBottom="14dp"
             android:textAppearance="?android:attr/textAppearanceSmall"
             android:textColor="@color/bg_blue" />
 
-        <TextView
-            android:id="@+id/achievement_agree_count"
+
+
+        <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="right"
-            android:layout_marginTop="3dp"
-            android:text="23"
-            android:textAppearance="?android:attr/textAppearanceSmall"
-            android:textColor="@color/main_gray" />
+            android:layout_gravity="right">
+
+            <TextView
+                android:id="@+id/achievement_agree_count"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                android:text="23"
+                android:paddingTop="14dp"
+                android:paddingBottom="14dp"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:textColor="@color/main_gray" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/celljiantou"
+                android:layout_gravity="center_vertical"
+                android:visibility="invisible"/>
+
+        </LinearLayout>
+
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="1sp"
             android:layout_columnSpan="2"
             android:layout_marginTop="3dp"
-            android:background="@color/main_gray" />
+            android:background="@color/gray" />
 
         <TextView
             android:id="@+id/TextView04"
@@ -210,26 +250,43 @@
             android:layout_height="wrap_content"
             android:layout_gravity="left"
             android:layout_marginTop="3dp"
+            android:paddingTop="14dp"
+            android:paddingBottom="14dp"
             android:text="佣金"
             android:textAppearance="?android:attr/textAppearanceSmall"
             android:textColor="@color/bg_blue" />
+
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="right">
 
         <TextView
             android:id="@+id/achievement_money_count"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="right"
-            android:layout_marginTop="3dp"
-            android:text="23.3333>"
+            android:text="￥2313"
+            android:paddingTop="14dp"
+            android:paddingBottom="14dp"
             android:textAppearance="?android:attr/textAppearanceSmall"
             android:textColor="@color/main_gray" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/celljiantou"
+            android:layout_gravity="center_vertical"/>
+
+    </LinearLayout>
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="1sp"
             android:layout_columnSpan="2"
             android:layout_marginTop="3dp"
-            android:background="@color/main_gray" />
+            android:background="@color/gray" />
 
         <TextView
             android:id="@+id/TextView06"
@@ -237,19 +294,39 @@
             android:layout_height="wrap_content"
             android:layout_gravity="left"
             android:layout_marginTop="3dp"
+            android:paddingTop="14dp"
+            android:paddingBottom="14dp"
             android:text="我的足迹"
             android:textAppearance="?android:attr/textAppearanceSmall"
             android:textColor="@color/bg_blue" />
 
-        <TextView
-            android:id="@+id/achievement_my_route"
+        <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="right"
-            android:layout_marginTop="3dp"
-            android:text=">"
-            android:textAppearance="?android:attr/textAppearanceSmall"
-            android:textColor="@color/main_gray" />
+            android:layout_gravity="right">
+
+            <TextView
+                android:id="@+id/achievement_my_route"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                android:text="23"
+                android:paddingTop="14dp"
+                android:paddingBottom="14dp"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:textColor="@color/main_gray"
+                android:visibility="invisible"/>
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/celljiantou"
+                android:layout_gravity="center_vertical"
+/>
+
+        </LinearLayout>
+
+
     </GridLayout>
 
 </LinearLayout>

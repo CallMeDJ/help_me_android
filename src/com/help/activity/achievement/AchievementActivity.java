@@ -34,6 +34,8 @@ public class AchievementActivity extends BaseActivity{
 		return R.layout.achievement;
 	}
 	private void initData(){
+		StaticDatas.initGlobalRank(this);
+
 		Map<String, String> achievemengData = StaticDatas.achievementData;
 
 		String[] datas  = achievemengData.get("achievement_expLiner").split("/");
