@@ -112,7 +112,7 @@
         android:layout_height="wrap_content"
         android:background="@drawable/button_dot"
         android:gravity="center_vertical"
-        android:hint="请输入您的位置"
+        android:hint="请输入您的详细地址"
         android:inputType="text"
         android:lines="1"
         android:layout_marginLeft="15dp"

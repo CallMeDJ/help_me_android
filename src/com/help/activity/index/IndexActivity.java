@@ -314,7 +314,7 @@ public class IndexActivity extends BaseActivity implements OnClickListener,
 											jsonObj.getString("order_content"),
 											jsonObj.getString("order_location"),
 											jsonObj.getString("dist"),
-											jsonObj.getString("order_reward"),
+											"￥"+jsonObj.getString("order_reward"),
 											Double.valueOf(jsonObj
 													.getString("order_location_latitude")),
 											Double.valueOf(jsonObj
@@ -484,8 +484,8 @@ public class IndexActivity extends BaseActivity implements OnClickListener,
 //			String[] b = a.split(" ");
 			holder.tv1.setText(obj.getMmasterPerson());
 			holder.tv2.setText(obj.getMtaskContext());
-			holder.tv3.setText(obj.getMaddress());
-			holder.tv4.setText(obj.getMlength());
+			holder.tv3.setText(obj.getMaddress()+"    "+obj.getMlength());
+			//holder.tv4.setText(obj.getMlength());
 			holder.tv5.setText(obj.getMtaskReward());
 
 			return convertView;

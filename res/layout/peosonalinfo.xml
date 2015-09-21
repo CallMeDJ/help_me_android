@@ -201,13 +201,9 @@
     <View
         android:layout_width="match_parent"
         android:layout_height="0.1dp"
+        android:layout_marginLeft="15dp"
         android:background="@color/main_line_gray" />
 
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="0.1dp"
-        android:layout_marginTop="20dp"
-        android:background="@color/main_line_gray" />
 
     <RelativeLayout
         android:id="@+id/geren_layout4"
@@ -312,4 +308,113 @@
         android:layout_height="0.1dp"
         android:background="@color/main_line_gray" />
 
+     <View
+        android:layout_width="match_parent"
+        android:layout_height="0.1dp"
+        android:layout_marginTop="20dp"
+        android:background="@color/main_line_gray" />
+
+    <RelativeLayout
+        android:id="@+id/geren_layout4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white" >
+
+        <TextView
+            android:id="@+id/login_meiyong_iv1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerInParent="true"
+            android:layout_marginLeft="5dp"
+            android:paddingLeft="10dp"
+            android:text="实名认证"
+            android:textColor="@color/alltext"
+            android:textSize="14sp"
+            android:visibility="visible" />
+
+        <TextView
+            android:id="@+id/m_showcar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/celljiantou"
+            android:gravity="center"
+            android:textColor="@color/alltext"
+            android:visibility="visible" />
+
+        <TextView
+            android:id="@+id/geren_tv3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_gravity="center"
+            android:layout_marginLeft="5dp"
+            android:layout_toLeftOf="@+id/m_showcar"
+            android:paddingBottom="10dp"
+            android:paddingTop="10dp"
+            android:text="已认证"
+            android:textColor="@color/alltext"
+            android:textSize="14sp" />
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.1dp"
+        android:layout_marginLeft="15dp"
+        android:background="@color/main_line_gray" />
+
+    <RelativeLayout
+        android:id="@+id/geren_layout5"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white" >
+
+        <TextView
+            android:id="@+id/login_meiyong_iv1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerInParent="true"
+            android:layout_marginLeft="5dp"
+            android:paddingLeft="10dp"
+            android:text="信用评测"
+            android:textColor="@color/alltext"
+            android:textSize="14sp"
+            android:visibility="visible" />
+
+        <TextView
+            android:id="@+id/geren_tv4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_gravity="center"
+            android:layout_marginLeft="5dp"
+            android:layout_toLeftOf="@+id/m_showcar"
+            android:paddingBottom="10dp"
+            android:paddingTop="10dp"
+            android:text="未评测"
+            android:textColor="@color/alltext"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/m_showcar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/celljiantou"
+            android:gravity="center"
+            android:textColor="@color/alltext"
+            android:visibility="visible" />
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.1dp"
+        android:background="@color/main_line_gray" />
+    
 </LinearLayout>
