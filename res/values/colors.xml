@@ -33,6 +33,7 @@
     <color name="shenblue" type="color">#4DB7DA</color>
     <color name="result_view">#b0000000</color>
     <color name="viewfinder_mask">#60000000</color>
+    <color name="transparent">#00000000</color>
     <color name="possible_result_points">#c0ffff00</color>
     <color name="gray">#dddddd</color>
     <color name="deep_gray">#666666</color>
