@@ -198,10 +198,10 @@ public class TaskActivity extends BaseActivity implements
 			}
 
 			holder.time.setText(allList1.get(position).get("time"));
-			holder.content.setText(allList1.get(position).get("time"));
-			holder.dizhi.setText(allList1.get(position).get("time"));
-			holder.juli.setText(allList1.get(position).get("time"));
-			holder.qian.setText(allList1.get(position).get("time"));
+			holder.content.setText(allList1.get(position).get("content"));
+			holder.dizhi.setText(allList1.get(position).get("dizhi"));
+			holder.juli.setText(allList1.get(position).get("juli"));
+			holder.qian.setText(allList1.get(position).get("jiner"));
 			
 
 			return convertView;
