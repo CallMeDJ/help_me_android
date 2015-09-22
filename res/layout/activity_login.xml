@@ -47,6 +47,7 @@
             android:hint="@string/yonghumingshoujihao"
             android:lines="1"
             android:padding="10dp"
+            android:inputType="number"
             android:textColor="@color/main_text_black"
             android:textSize="@dimen/sp_28px" />
     </LinearLayout>

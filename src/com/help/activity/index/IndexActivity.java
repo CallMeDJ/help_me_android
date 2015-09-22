@@ -308,11 +308,12 @@ public class IndexActivity extends BaseActivity implements OnClickListener,
 								for (int i = 0; i < jsonArr.length(); i++) {
 									JSONObject jsonObj = jsonArr
 											.getJSONObject(i);
-									String[] strTime = jsonObj.getString("order_submittime").split("-");
+									//2015-09-22 11:12:53
+									String strTime = jsonObj.getString("order_submittime").substring(5,19);
 									String[] strCity = jsonObj.getString("order_location").split("市");
 									TaskObject taskObj = new TaskObject(
 											jsonObj.getString("order_id"),
-											strTime[1],
+											strTime,
 											jsonObj.getString("order_content"),
 											strCity[1],
 											jsonObj.getString("dist"),
