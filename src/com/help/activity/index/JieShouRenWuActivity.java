@@ -35,8 +35,10 @@ import com.baidu.location.LocationClientOption;
 import com.baidu.location.LocationClientOption.LocationMode;
 import com.example.help.R;
 import com.help.activity.CommonAPI;
+import com.help.activity.MainActivity;
 import com.help.base.BaseActivity;
 import com.help.util.ProcessDialogUtil;
+import com.help.util.StaticVariable;
 import com.help.util.TimeUtil;
 import com.help.util.Tool;
 import com.loopj.android.http.AsyncHttpResponseHandler;
@@ -214,6 +216,8 @@ public class JieShouRenWuActivity extends BaseActivity implements
 					cancel_jieshou();
 				}
 				dialog.dismiss();
+				StaticVariable.put(StaticVariable.sv_toIndex,"1");
+				startActivity(new Intent(JieShouRenWuActivity.this,MainActivity.class));
 				JieShouRenWuActivity.this.finish();
 			}
 		});
@@ -253,6 +257,8 @@ public class JieShouRenWuActivity extends BaseActivity implements
 					complete();
 				} else {
 					//complete();
+					StaticVariable.put(StaticVariable.sv_toIndex,"1");
+					startActivity(new Intent(JieShouRenWuActivity.this,MainActivity.class));
 					JieShouRenWuActivity.this.finish();
 				}
 			}
@@ -296,6 +302,8 @@ public class JieShouRenWuActivity extends BaseActivity implements
 				// TODO Auto-generated method stub
 				evaluate(rb.getRating() + "");
 				dialog.dismiss();
+				StaticVariable.put(StaticVariable.sv_toIndex,"1");
+				startActivity(new Intent(JieShouRenWuActivity.this,MainActivity.class));
 				JieShouRenWuActivity.this.finish();
 			}
 		});
