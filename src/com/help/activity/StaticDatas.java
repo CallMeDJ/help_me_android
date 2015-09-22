@@ -96,9 +96,9 @@ public class StaticDatas {
 		
 		
 		achievementData.put("achievement_position_value", "实习生");
-		achievementData.put("achievement_global_rank_value", "100000");
+		achievementData.put("achievement_global_rank_value", "10000");
 		achievementData.put("achievement_current_level", "实习生");
-        achievementData.put("achievement_expLiner","100/20000");
+        achievementData.put("achievement_expLiner","80/100");
         achievementData.put("achievement_next_level", "职业生");
         achievementData.put("achievement_completed_mission","211");
         achievementData.put("achievement_agree_count", "12");
