@@ -127,7 +127,6 @@
                 android:layout_height="10dp"
                 android:layout_centerHorizontal="true"
                 android:layout_centerVertical="true"
-                android:max="100"
                 android:secondaryProgress="0" />
 
             <TextView

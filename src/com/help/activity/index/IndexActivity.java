@@ -60,7 +60,7 @@ public class IndexActivity extends BaseActivity implements OnClickListener,
 	// private ArrayList<Map<String, String>> list = null;
 
 	MyAdapter adapter = null;
-	
+
 	// 下拉刷新
 	private XListView mListView = null;
 	// 记录当前刷新页
@@ -319,13 +319,21 @@ public class IndexActivity extends BaseActivity implements OnClickListener,
 								for (int i = 0; i < jsonArr.length(); i++) {
 									JSONObject jsonObj = jsonArr
 											.getJSONObject(i);
+									// 2015-09-22 11:12:53
+									String strTime = jsonObj.getString(
+											"order_submittime")
+											.substring(5, 19);
+									String[] strCity = jsonObj.getString(
+											"order_location").split("市");
 									TaskObject taskObj = new TaskObject(
 											jsonObj.getString("order_id"),
-											jsonObj.getString("order_submittime"),
+											strTime,
 											jsonObj.getString("order_content"),
-											jsonObj.getString("order_location"),
+											strCity[1],
 											jsonObj.getString("dist"),
-											"￥"+jsonObj.getString("order_reward"),
+											"￥"
+													+ jsonObj
+															.getString("order_reward"),
 											Double.valueOf(jsonObj
 													.getString("order_location_latitude")),
 											Double.valueOf(jsonObj
@@ -512,12 +520,12 @@ public class IndexActivity extends BaseActivity implements OnClickListener,
 
 			TaskObject obj = (TaskObject) mTaskList.get(position);
 
-//			String a = obj.getMmasterPerson();
-//			String[] b = a.split(" ");
+			// String a = obj.getMmasterPerson();
+			// String[] b = a.split(" ");
 			holder.tv1.setText(obj.getMmasterPerson());
 			holder.tv2.setText(obj.getMtaskContext());
-			holder.tv3.setText(obj.getMaddress()+"    "+obj.getMlength());
-			//holder.tv4.setText(obj.getMlength());
+			holder.tv3.setText(obj.getMaddress() + "    " + obj.getMlength());
+			// holder.tv4.setText(obj.getMlength());
 			holder.tv5.setText(obj.getMtaskReward());
 
 			return convertView;
@@ -539,7 +547,8 @@ public class IndexActivity extends BaseActivity implements OnClickListener,
 		TaskObject taskObj = (TaskObject) mTaskList.get(position - 1);
 		final String Id = taskObj.getOrderId();
 		RequestParams params = new RequestParams();
-		params.put("userId", Tool.readData(IndexActivity.this, "user", "userId"));// 用户id
+		params.put("userId",
+				Tool.readData(IndexActivity.this, "user", "userId"));// 用户id
 		params.put("orderId", Id);// 任务id
 
 		ESalesHttpClient.requestGet(this, CommonAPI.API_ACCEPT, params,
@@ -596,6 +605,8 @@ public class IndexActivity extends BaseActivity implements OnClickListener,
 								// e.printStackTrace();
 								// }
 
+								String[] strCity1 = data.getString(
+										"order_location").split("市");
 								Intent intent = new Intent(IndexActivity.this,
 										JieShouRenWuActivity.class);
 								intent.putExtra("show", "jieshou");
@@ -605,8 +616,7 @@ public class IndexActivity extends BaseActivity implements OnClickListener,
 										data.getString("user_nickname"));
 								intent.putExtra("phone",
 										data.getString("user_phone"));
-								intent.putExtra("weizhi",
-										data.getString("order_location"));
+								intent.putExtra("weizhi", strCity1[1]);
 								startActivity(intent);
 								anim_right_in();
 

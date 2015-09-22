@@ -20,7 +20,7 @@
             android:id="@+id/dialog_title1"
             android:layout_width="50dp"
             android:layout_height="50dp"
-            android:src="@drawable/wechatlogo" />
+            android:src="@drawable/wechat" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -44,7 +44,7 @@
             android:id="@+id/dialog_title2"
             android:layout_width="50dp"
             android:layout_height="50dp"
-            android:src="@drawable/qqlogo" />
+            android:src="@drawable/zhifubaologo" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -68,7 +68,7 @@
             android:id="@+id/dialog_title3"
             android:layout_width="50dp"
             android:layout_height="50dp"
-            android:src="@drawable/tianxiaotong" />
+            android:src="@drawable/tianxiatong" />
 
         <TextView
             android:layout_width="wrap_content"
