@@ -38,8 +38,8 @@ public class TaskObjectList {
 		taskobj.setMlittlebmpresid(R.drawable.money);
 		mTaskList.add(taskobj);
 
-		taskobj = new TaskObject("1","2015-11-11", "取快递444", "平安大厦11","200m","20￥", 22.537637,
-				114.121474);
+		taskobj = new TaskObject("1","2015-11-11", "取快递444", "平安大厦11","200m","20￥", 22.549937,
+				114.118474);
 		taskobj.setMbmpresid(R.drawable.meinv3);
 		taskobj.setMlittlebmpresid(R.drawable.money);
 		mTaskList.add(taskobj);

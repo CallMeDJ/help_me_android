@@ -1,5 +1,6 @@
 package com.help.activity.index;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
@@ -69,6 +70,8 @@ public class IndexActivity extends BaseActivity implements OnClickListener,
 
 	// 确认对话框
 	private Dialog dialog = null;
+	
+	public int[] girlsPicArray;
 
 	@Override
 	protected int layoutId() {
@@ -98,6 +101,14 @@ public class IndexActivity extends BaseActivity implements OnClickListener,
 		 * showMenu(); titleBarMenu.setText("+"); titleBarMenu.setTextSize(18);
 		 */
 		getLocation();
+		
+		girlsPicArray = new int[4];
+		int idx = 0;
+		girlsPicArray[idx++] = R.drawable.meinv1;
+		girlsPicArray[idx++] = R.drawable.meinv2;
+		girlsPicArray[idx++] = R.drawable.meinv3;
+		girlsPicArray[idx++] = R.drawable.meinv4;
+		//girlsPicArray[idx++] = R.drawable.gg1;
 
 		// list = new ArrayList<Map<String, String>>();
 		// Map<String, String> map1 = new HashMap<String, String>();
@@ -319,7 +330,7 @@ public class IndexActivity extends BaseActivity implements OnClickListener,
 													.getString("order_location_latitude")),
 											Double.valueOf(jsonObj
 													.getString("order_location_longitude")));
-									taskObj.setMbmpresid(R.drawable.meinv2);
+									taskObj.setMbmpresid( girlsPicArray[i%girlsPicArray.length] );
 									taskObj.setMlittlebmpresid(R.drawable.money);
 									mTaskList.add(taskObj);
 								}
@@ -336,6 +347,27 @@ public class IndexActivity extends BaseActivity implements OnClickListener,
 							e.printStackTrace();
 						}
 
+						//当任务的坐标接近时做坐标偏移，以第一个任务为基准
+						final double offset = 0.00005;
+						final double times = 20;
+						TaskObject topObj = null;
+						if(mTaskList.size()>0)
+							topObj = (TaskObject)mTaskList.get(0);
+						if(topObj!=null)
+							for(int i=1;i<mTaskList.size();i++){
+								TaskObject _Obj = (TaskObject)mTaskList.get(i);
+								double diff_Lat = _Obj.getmLat()-topObj.getmLat();
+								double diff_Lng = _Obj.getmLng()-topObj.getmLng();
+								double diff = Math.sqrt( Math.pow(diff_Lat,2) + Math.pow(diff_Lng,2) );
+								if( diff<=offset ){
+									double drift_1 = Math.random() * offset * times;
+									double drift_2 = Math.random() * offset * times;
+									boolean isPositive_1 = Math.random()>0.5 ? true : false;
+									boolean isPositive_2 = Math.random()>0.5 ? true : false;
+									_Obj.setmLat( isPositive_1 ? _Obj.getmLat()+drift_1 : _Obj.getmLat()-drift_1 );
+									_Obj.setmLng( isPositive_2 ? _Obj.getmLng()+drift_2 : _Obj.getmLng()-drift_2 );
+								}
+							}
 					}
 
 				});

@@ -46,7 +46,7 @@ public class AchievementRouteMapActivity extends Activity {
 	private List mtaskDataList=null;
 
 	// 初始化全局 bitmap 信息，不用时及时 recycle
-	BitmapDescriptor bdGround = BitmapDescriptorFactory.fromResource(R.drawable.ground_overlay);
+	BitmapDescriptor bdGround = BitmapDescriptorFactory.fromResource(R.drawable.ground_overlay1);
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
