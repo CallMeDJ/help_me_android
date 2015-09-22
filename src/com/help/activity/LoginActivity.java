@@ -6,11 +6,17 @@ import org.json.JSONObject;
 
 import android.app.Dialog;
 import android.content.Intent;
+import android.view.Display;
+import android.view.Gravity;
 import android.view.KeyEvent;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -36,6 +42,9 @@ public class LoginActivity extends BaseActivity implements OnClickListener {
 	// 忘记密码
 	private TextView tv_wang = null;
 	private TextView tv_zhuce = null;
+	
+	//第三方登录
+	private TextView tv_other = null;
 
 	// usermode
 	private UserMode allUser = null;
@@ -44,6 +53,9 @@ public class LoginActivity extends BaseActivity implements OnClickListener {
 
 	private String from = "";
 
+	// 选择图片
+	private Dialog dialog = null;
+	
 	@Override
 	protected int layoutId() {
 		// TODO Auto-generated method stub
@@ -76,6 +88,7 @@ public class LoginActivity extends BaseActivity implements OnClickListener {
 		et_pass = (EditText) findViewById(R.id.login_et_pass);
 		tv_wang = (TextView) findViewById(R.id.login_wangjimima);
 		tv_zhuce = (TextView) findViewById(R.id.login_zhuce);
+		tv_other = (TextView) findViewById(R.id.login_zhifubao);
 
 	}
 
@@ -88,6 +101,7 @@ public class LoginActivity extends BaseActivity implements OnClickListener {
 		login.setOnClickListener(this);
 		tv_wang.setOnClickListener(this);
 		tv_zhuce.setOnClickListener(this);
+		tv_other.setOnClickListener(this);
 
 	}
 
@@ -135,6 +149,10 @@ public class LoginActivity extends BaseActivity implements OnClickListener {
 			// 忘记密码
 			startActivity(new Intent(LoginActivity.this, RegisterActivity.class));
 			anim_right_in();
+			break;
+		case R.id.login_zhifubao:
+			// 忘记密码
+			ShowDialog();
 			break;
 		default:
 			break;
@@ -239,4 +257,60 @@ public class LoginActivity extends BaseActivity implements OnClickListener {
 				});
 	}
 
+	private void ShowDialog() {
+		dialog = new Dialog(this, R.style.dialogw);
+		final View llContent = LayoutInflater.from(this).inflate(
+				R.layout.dialog_bottom, null);
+
+		ImageView tv1 = (ImageView) llContent.findViewById(R.id.dialog_title1);
+		ImageView tv2 = (ImageView) llContent.findViewById(R.id.dialog_title2);
+		ImageView tv3 = (ImageView) llContent.findViewById(R.id.dialog_title3);
+
+		dialog.setContentView(llContent);
+
+		tv1.setOnClickListener(new View.OnClickListener() {
+
+			@Override
+			public void onClick(View arg0) {
+				// TODO Auto-generated method stub
+				// 微信
+				dialog.cancel();
+			}
+		});
+
+		tv2.setOnClickListener(new View.OnClickListener() {
+
+			@Override
+			public void onClick(View arg0) {
+				// TODO Auto-generated method stub
+				// 支付宝
+				dialog.cancel();
+			}
+		});
+
+		tv3.setOnClickListener(new View.OnClickListener() {
+
+			@Override
+			public void onClick(View arg0) {
+				// TODO Auto-generated method stub
+				//天下通
+				dialog.cancel();
+			}
+		});
+
+		Window dialogWindow = dialog.getWindow();
+		WindowManager.LayoutParams lp = dialogWindow.getAttributes();
+		dialogWindow.setGravity(Gravity.LEFT | Gravity.BOTTOM);
+		WindowManager wm = dialogWindow.getWindowManager();
+		Display d = wm.getDefaultDisplay();
+		lp.width = d.getWidth();
+		lp.x = 0;
+		lp.y = 0;
+		dialogWindow.setAttributes(lp);
+		dialogWindow.setWindowAnimations(R.style.AnimBottom);
+		if (!dialog.isShowing()) {
+			dialog.show();
+		}
+	}
+	
 }

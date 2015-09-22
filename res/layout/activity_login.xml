@@ -153,7 +153,8 @@
             android:padding="10dp"
             android:text="天下通登录"
             android:textColor="@color/main_blue"
-            android:textSize="@dimen/sp_28px" />
+            android:textSize="@dimen/sp_28px"
+            android:visibility="gone" />
 
         <TextView
             android:id="@+id/login_weixin"
@@ -163,7 +164,8 @@
             android:layout_centerInParent="true"
             android:text="微信登录"
             android:textColor="@color/main_blue"
-            android:textSize="@dimen/sp_28px" />
+            android:textSize="@dimen/sp_28px" 
+            android:visibility="gone"/>
 
         <TextView
             android:id="@+id/login_zhifubao"
@@ -173,7 +175,7 @@
             android:layout_centerInParent="true"
             android:layout_marginBottom="10dp"
             android:padding="10dp"
-            android:text="QQ登录"
+            android:text="使用第三方登录"
             android:textColor="@color/main_blue"
             android:textSize="@dimen/sp_28px" />
     </RelativeLayout>
