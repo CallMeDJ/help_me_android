@@ -37,5 +37,6 @@
     <color name="possible_result_points">#c0ffff00</color>
     <color name="gray">#dddddd</color>
     <color name="deep_gray">#666666</color>
+    <color name="pink">#FF3366</color>
 
 </resources>
