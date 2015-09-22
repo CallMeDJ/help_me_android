@@ -31,7 +31,12 @@ public class WelcomeActivity extends BaseActivity {
 
 	private KeywordsFlow keywordsFlow;
 
-	public static final String[] keywords = {"帮么","帮","帮么","帮","帮么","帮","帮么","帮","帮么","帮","帮么","帮","帮么","帮么","帮","帮么","帮","帮么","帮","帮么"};
+	public static final String[] keywords = { "帮吗", "中国平安", "帮吗", "中国平安", "帮吗",
+			"中国平安", "帮吗", "中国平安", "帮吗","中国平安", "平安WiFi","中国平安", "帮吗", "平安万里通","中国平安", "帮吗", "好福利",
+			"帮吗", "平安好车主", "帮吗", "平安彩票", "帮吗", "口袋银行", "帮吗", "一账通", "帮吗",
+			"平安证券","中国平安", "帮吗", "平安天下通","中国平安", "帮吗", "平安橙子", "帮吗", "平安人寿", "帮么", "陆金所",
+			"帮吗", "平安好医生", "帮吗", "平安易贷", "帮吗", "平安财富宝", "帮吗", "壹钱包", "帮吗",
+			"平安车险", "帮吗", "平安快付", "帮吗", "保险商城", "帮吗", "金融管家" };
 
 	@Override
 	protected int layoutId() {
@@ -69,7 +74,7 @@ public class WelcomeActivity extends BaseActivity {
 		// TODO Auto-generated method stub
 		super.doOtherThing();
 		AlphaAnimation anima = new AlphaAnimation(0.5f, 1.0f);
-		anima.setDuration(4000);// 设置动画显示时间
+		anima.setDuration(4500);// 设置动画显示时间
 		// welcomeImg.startAnimation(anima);
 		// tv1.startAnimation(anima);
 		// tv2.startAnimation(anima);
@@ -106,7 +111,7 @@ public class WelcomeActivity extends BaseActivity {
 
 		@Override
 		public void onAnimationEnd(Animation animation) {
-			 skip(); // 动画结束后跳转到别的页面
+			skip(); // 动画结束后跳转到别的页面
 		}
 
 		@Override
@@ -116,26 +121,26 @@ public class WelcomeActivity extends BaseActivity {
 
 	}
 
-//	private class AnimationImpl2 implements AnimationListener {
-//
-//		@Override
-//		public void onAnimationStart(Animation animation) {
-//			// welcomeImg.setBackgroundResource(R.drawable.bg3);
-//		}
-//
-//		@Override
-//		public void onAnimationEnd(Animation animation) {
-//			keywordsFlow.rubKeywords();
-//			feedKeywordsFlow(keywordsFlow, keywords);
-//			keywordsFlow.go2Show(KeywordsFlow.ANIMATION_IN);// 开启动画
-//		}
-//
-//		@Override
-//		public void onAnimationRepeat(Animation animation) {
-//
-//		}
-//
-//	}
+	// private class AnimationImpl2 implements AnimationListener {
+	//
+	// @Override
+	// public void onAnimationStart(Animation animation) {
+	// // welcomeImg.setBackgroundResource(R.drawable.bg3);
+	// }
+	//
+	// @Override
+	// public void onAnimationEnd(Animation animation) {
+	// keywordsFlow.rubKeywords();
+	// feedKeywordsFlow(keywordsFlow, keywords);
+	// keywordsFlow.go2Show(KeywordsFlow.ANIMATION_IN);// 开启动画
+	// }
+	//
+	// @Override
+	// public void onAnimationRepeat(Animation animation) {
+	//
+	// }
+	//
+	// }
 
 	// 在此判断缓存文件，是否是第一次登录，进入到引导页，否则判断是否登录，否则直接跳转到主页
 	private void skip() {
