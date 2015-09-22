@@ -16,6 +16,7 @@ import com.help.activity.GlobalRankActivity;
 import com.help.activity.PositionActivity;
 import com.help.activity.StaticDatas;
 import com.help.activity.index.AchievementRouteMapActivity;
+import com.help.activity.more.Wallet;
 import com.help.activity.task.TaskActivity;
 import com.help.base.BaseActivity;
 import com.help.util.expLiner;
@@ -32,6 +33,7 @@ public class AchievementActivity extends BaseActivity{
 	private TextView achievement_money_count;
 	private RelativeLayout achievement_my_route;
 	private RelativeLayout achievement_finished_task;
+	private RelativeLayout achievement_wallet;
 
 	private Context context;
 	@Override
@@ -86,6 +88,17 @@ public class AchievementActivity extends BaseActivity{
 		achievement_money_count = (TextView) findViewById(R.id.achievement_money_count);
 		achievement_my_route = (RelativeLayout)findViewById(R.id.achievement_my_route);
 		achievement_finished_task = (RelativeLayout)findViewById(R.id.achievement_finished_task);
+		achievement_wallet = (RelativeLayout)findViewById(R.id.achievement_wallet);
+		
+		achievement_wallet.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View arg0) {
+				Intent intent = new Intent();
+				intent = new Intent(context, Wallet.class);
+				context.startActivity(intent);
+				
+			}
+		});
 
 		achievement_finished_task.setOnClickListener(new View.OnClickListener() {
 			@Override
