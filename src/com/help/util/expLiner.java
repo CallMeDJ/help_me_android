@@ -61,7 +61,7 @@ public class expLiner extends ProgressBar{
 	private void initPaint(){
 		this.mPaint = new Paint();
 		mPaint.setAntiAlias(true);
-		mPaint.setTextSize(25f);
+		mPaint.setTextSize(12f);
 		this.mPaint.setColor(Color.WHITE);
 		Log.d("init_painting_success", "");
 		setWillNotDraw(false);
